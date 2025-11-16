@@ -1,0 +1,237 @@
+================================================================================
+STEAM REFORMING PROCESS FOR HYDROGEN PRODUCTION FROM BIO-OIL
+Process Flowsheet Diagram
+================================================================================
+
+                        FEED SECTION
+                        ============
+
+    Bio-oil              Steam
+    (100 kg)            (200 kg)
+    25°C                 500°C
+       |                   |
+       |                   |
+       └─────►[MIXER]◄─────┘
+                 |
+                 | Mixed Feed
+                 | 300°C, 20 bar
+                 |
+                 ▼
+              [HEATER]
+             (Pre-heater)
+        Heat Input: 500 MJ
+                 |
+                 | 700°C
+                 |
+                 ▼
+
+                   REFORMING SECTION
+                   =================
+
+         ┌───────────────────────┐
+         │   MAIN REFORMER       │
+         │   (Catalytic Reactor) │
+         │                       │
+         │   T: 800-850°C        │
+         │   P: 20 bar           │
+         │   Catalyst: Ni/Al₂O₃  │
+         │                       │
+         │   Reactions:          │
+         │   Bio-oil + H₂O       │
+         │     → H₂ + CO + CO₂   │
+         └───────────────────────┘
+                 |
+                 | Syngas
+                 | H₂: 55%, CO: 12%, CO₂: 8%, H₂O: 20%, CH₄: 5%
+                 | 850°C
+                 |
+                 ▼
+
+               WATER-GAS SHIFT SECTION
+               =======================
+
+         ┌───────────────────────┐
+         │  HTS REACTOR          │
+         │  (High-Temp Shift)    │
+         │                       │
+         │  T: 350-400°C         │
+         │  Catalyst: Fe-Cr      │
+         │                       │
+         │  Reaction:            │
+         │  CO + H₂O → H₂ + CO₂  │
+         └───────────────────────┘
+                 |
+                 | H₂: 65%, CO: 4%, CO₂: 20%, H₂O: 10%, CH₄: 1%
+                 | 420°C
+                 |
+                 ▼
+            [COOLER 1]
+                 |
+                 | 200°C
+                 |
+                 ▼
+         ┌───────────────────────┐
+         │  LTS REACTOR          │
+         │  (Low-Temp Shift)     │
+         │                       │
+         │  T: 200-220°C         │
+         │  Catalyst: Cu-Zn      │
+         │                       │
+         │  Reaction:            │
+         │  CO + H₂O → H₂ + CO₂  │
+         └───────────────────────┘
+                 |
+                 | H₂: 70%, CO: <1%, CO₂: 23%, H₂O: 5%, CH₄: 1%
+                 | 230°C
+                 |
+                 ▼
+
+              SEPARATION SECTION
+              ==================
+
+            [COOLER 2]
+                 |
+                 | 35°C
+                 |
+                 ▼
+         ┌───────────────────────┐
+         │  FLASH SEPARATOR      │
+         │  (Condenser)          │
+         └───────────────────────┘
+              |              |
+        Gas Stream      Liquid Stream
+              |              |
+              |              └──► WASTEWATER (50 kg)
+              |                   (needs treatment)
+              |
+              | H₂: 73%, CO₂: 25%, CO: <1%, CH₄: 1%
+              | 35°C, 20 bar
+              |
+              ▼
+         ┌───────────────────────┐
+         │  CO₂ REMOVAL          │
+         │  (Amine Absorber)     │
+         │                       │
+         │  Solvent: MEA/DEA     │
+         └───────────────────────┘
+              |              |
+        Clean Gas      CO₂ Stream
+              |              |
+              |              └──► CO₂ (150 kg)
+              |                   95% purity
+              |                   (can capture/use)
+              |
+              | H₂: 96%, CH₄: 2%, N₂: 1%, CO: <0.5%
+              | 35°C, 20 bar
+              |
+              ▼
+
+              PURIFICATION SECTION
+              ====================
+
+         ┌───────────────────────┐
+         │       PSA             │
+         │ (Pressure Swing       │
+         │  Adsorption)          │
+         │                       │
+         │  Adsorbent:           │
+         │  - Activated carbon   │
+         │  - Zeolites           │
+         │  - Molecular sieves   │
+         │                       │
+         │  H₂ Recovery: 90%     │
+         └───────────────────────┘
+              |              |
+      Pure H₂ Stream    Tail Gas
+              |              |
+              |              └──► TAIL GAS (10-15% of feed)
+              |                   H₂: 50%, CH₄: 10%, CO: 3%, CO₂: 30%
+              |                   ↓
+              |                   Burned for process heat
+              |                   (Energy Recovery)
+              |
+              ▼
+
+         ┌───────────────────────┐
+         │   HYDROGEN PRODUCT    │
+         │                       │
+         │   Purity: >99.9%      │
+         │   Amount: 10 kg       │
+         │   Pressure: 20 bar    │
+         │   Temperature: 35°C   │
+         └───────────────────────┘
+                 |
+                 ▼
+            STORAGE/USE
+
+
+================================================================================
+MATERIAL BALANCE (per 100 kg bio-oil)
+================================================================================
+
+INPUTS:
+-------
+Bio-oil:           100 kg
+Steam:             200 kg
+--------------------
+Total In:          300 kg
+
+OUTPUTS:
+--------
+Hydrogen (H₂):      10 kg  ← PRODUCT
+CO₂ captured:      150 kg  ← By-product
+Wastewater:         50 kg  ← Waste (treated)
+Tail gas (equiv):   90 kg  ← Recycled for heat
+--------------------
+Total Out:         300 kg  ✓ (mass balanced)
+
+
+================================================================================
+ENERGY BALANCE
+================================================================================
+
+ENERGY IN:
+----------
+Bio-oil (HHV):         1,800 MJ
+External heating:        500 MJ
+----------------------
+Total Energy In:       2,300 MJ
+
+ENERGY OUT:
+-----------
+H₂ Product (HHV):      1,200 MJ  ← Main product
+Tail gas (burned):       300 MJ  ← Recovered for process
+Heat losses:             800 MJ  ← Lost to environment
+----------------------
+Total Energy Out:      2,300 MJ  ✓ (energy balanced)
+
+EFFICIENCY: 52% (H₂ output / total input)
+
+
+================================================================================
+KEY OPERATING CONDITIONS
+================================================================================
+
+Equipment           Temperature (°C)    Pressure (bar)    Catalyst
+---------           ----------------    --------------    --------
+Mixer                    300                 20             -
+Pre-heater              700                 20             -
+Main Reformer           850                 20          Ni/Al₂O₃
+HTS Reactor             370                 20          Fe-Cr
+LTS Reactor             210                 20          Cu-Zn
+CO₂ Removal              35                 20          Amine
+PSA                      35               20/2        Adsorbents
+
+
+================================================================================
+NOTES:
+================================================================================
+
+1. S/C Ratio (Steam/Carbon) = 3.5 (typical)
+2. Main reformer is ENDOTHERMIC (needs heat input)
+3. Shift reactors are EXOTHERMIC (release heat)
+4. PSA cycles between high pressure (adsorb) and low pressure (desorb)
+5. All values are approximate and vary with bio-oil composition
+6. Total process time (residence): 10-30 minutes
+
+================================================================================
