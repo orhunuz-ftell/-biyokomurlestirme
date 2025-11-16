@@ -1,0 +1,361 @@
+PS C:\@biyokomurlestirme\python_codes\BiooilAI>  c:; cd 'c:\@biyokomurlestirme\python_codes\BiooilAI'; & 'c:\@biyokomurlestirme\python_codes\BiooilAI\.venv\Scripts\python.exe' 'c:\Users\orhun\.vscode\extensions\ms-python.debugpy-2024.12.0-win32-x64\bundled\libs\debugpy\adapter/../..\debugpy\launcher' '60053' '--' 'C:\@biyokomurlestirme\python_codes\BiooilAI\randomforest.py' 
+
+LiquidOutput için model eğitiliyor...
+Geçerli örnek sayısı: 22
+
+LiquidOutput için performans metrikleri:
+R2: 0.8889
+MAE: 3.1868
+MSE: 23.3261
+RMSE: 4.8297
+
+aromatics için model eğitiliyor...
+Geçerli örnek sayısı: 29
+
+aromatics için performans metrikleri:
+R2: 0.8828
+MAE: 7.0226
+MSE: 89.6746
+RMSE: 9.4697
+
+aliphatichydrocarbon için model eğitiliyor...
+Geçerli örnek sayısı: 22
+
+aliphatichydrocarbon için performans metrikleri:
+R2: -2.2398
+MAE: 6.0872
+MSE: 56.4030
+RMSE: 7.5102
+
+acids için model eğitiliyor...
+Geçerli örnek sayısı: 38
+
+acids için performans metrikleri:
+R2: 0.8754
+MAE: 4.0540
+MSE: 27.6627
+RMSE: 5.2595
+
+alcohols için model eğitiliyor...
+Geçerli örnek sayısı: 17
+
+alcohols için performans metrikleri:
+R2: 0.0245
+MAE: 2.9581
+MSE: 16.2482
+RMSE: 4.0309
+
+esters için model eğitiliyor...
+Geçerli örnek sayısı: 22
+
+esters için performans metrikleri:
+R2: 0.0278
+MAE: 7.9890
+MSE: 79.5657
+RMSE: 8.9200
+
+furans için model eğitiliyor...
+Geçerli örnek sayısı: 28
+
+furans için performans metrikleri:
+R2: 0.3634
+MAE: 3.0958
+MSE: 16.1833
+RMSE: 4.0228
+
+phenols için model eğitiliyor...
+Geçerli örnek sayısı: 38
+
+phenols için performans metrikleri:
+R2: 0.7484
+MAE: 4.1851
+MSE: 28.1594
+RMSE: 5.3065
+
+aldehyde_ketone için model eğitiliyor...
+Geçerli örnek sayısı: 38
+
+aldehyde_ketone için performans metrikleri:
+R2: 0.8736
+MAE: 1.4466
+MSE: 2.5562
+RMSE: 1.5988
+
+oxides için model eğitiliyor...
+Geçerli örnek sayısı: 17
+
+oxides için performans metrikleri:
+R2: -100.4509
+MAE: 1.3307
+MSE: 2.0786
+RMSE: 1.4417
+
+sugar için model eğitiliyor...
+Geçerli örnek sayısı: 31
+
+sugar için performans metrikleri:
+R2: -0.6777
+MAE: 18.4460
+MSE: 699.4403
+RMSE: 26.4469
+
+MAE: 18.4460
+MSE: 699.4403
+RMSE: 26.4469
+
+guaiacol için model eğitiliyor...
+RMSE: 26.4469
+
+guaiacol için model eğitiliyor...
+
+guaiacol için model eğitiliyor...
+guaiacol için model eğitiliyor...
+Geçerli örnek sayısı: 3
+Geçerli örnek sayısı: 3
+
+
+guaiacol için performans metrikleri:
+guaiacol için performans metrikleri:
+R2: -11.9225
+MAE: 3.7464
+R2: -11.9225
+MAE: 3.7464
+MSE: 15.2127
+RMSE: 3.9004
+MAE: 3.7464
+MSE: 15.2127
+RMSE: 3.9004
+
+MSE: 15.2127
+RMSE: 3.9004
+
+syringol için model eğitiliyor...
+RMSE: 3.9004
+
+syringol için model eğitiliyor...
+Geçerli örnek sayısı: 3
+
+syringol için model eğitiliyor...
+Geçerli örnek sayısı: 3
+syringol için model eğitiliyor...
+Geçerli örnek sayısı: 3
+
+Geçerli örnek sayısı: 3
+
+syringol için performans metrikleri:
+
+syringol için performans metrikleri:
+syringol için performans metrikleri:
+R2: -0.0330
+R2: -0.0330
+MAE: 1.3450
+MSE: 1.8688
+MAE: 1.3450
+MSE: 1.8688
+RMSE: 1.3670
+
+MSE: 1.8688
+RMSE: 1.3670
+
+catechol için model eğitiliyor...
+RMSE: 1.3670
+
+catechol için model eğitiliyor...
+
+catechol için model eğitiliyor...
+catechol için model eğitiliyor...
+Geçerli örnek sayısı: 3
+
+catechol için performans metrikleri:
+R2: -0.9199
+MAE: 0.2300
+R2: -0.9199
+MAE: 0.2300
+MSE: 0.1016
+RMSE: 0.3187
+
+N_containing için model eğitiliyor...
+Geçerli örnek sayısı: 6
+c:\@biyokomurlestirme\python_codes\BiooilAI\.venv\Lib\site-packages\sklearn\metrics\_regression.py:1211: UndefinedMetricWarning: R^2 score is not well-defined with less than two samples.   
+MSE: 0.1016
+RMSE: 0.3187
+
+N_containing için model eğitiliyor...
+Geçerli örnek sayısı: 6
+c:\@biyokomurlestirme\python_codes\BiooilAI\.venv\Lib\site-packages\sklearn\metrics\_regression.py:1211: UndefinedMetricWarning: R^2 score is not well-defined with less than two samples.   
+  warnings.warn(msg, UndefinedMetricWarning)
+RMSE: 0.3187
+
+N_containing için model eğitiliyor...
+Geçerli örnek sayısı: 6
+c:\@biyokomurlestirme\python_codes\BiooilAI\.venv\Lib\site-packages\sklearn\metrics\_regression.py:1211: UndefinedMetricWarning: R^2 score is not well-defined with less than two samples.   
+  warnings.warn(msg, UndefinedMetricWarning)
+
+N_containing için performans metrikleri:
+Geçerli örnek sayısı: 6
+c:\@biyokomurlestirme\python_codes\BiooilAI\.venv\Lib\site-packages\sklearn\metrics\_regression.py:1211: UndefinedMetricWarning: R^2 score is not well-defined with less than two samples.   
+  warnings.warn(msg, UndefinedMetricWarning)
+
+N_containing için performans metrikleri:
+R2: nan
+  warnings.warn(msg, UndefinedMetricWarning)
+
+N_containing için performans metrikleri:
+R2: nan
+
+N_containing için performans metrikleri:
+R2: nan
+R2: nan
+MAE: 4.3556
+MSE: 18.9711
+RMSE: 4.3556
+
+LiquidOutput için özellik önem dereceleri:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAE: 4.3556
+MSE: 18.9711
+RMSE: 4.3556
+
+LiquidOutput için özellik önem dereceleri:
+
+
+
+
+
+
+
+
+
+
+
+
+MAE: 4.3556
+MSE: 18.9711
+RMSE: 4.3556
+
+LiquidOutput için özellik önem dereceleri:
+
+
+
+
+
+
+
+
+
+
+MAE: 4.3556
+MSE: 18.9711
+RMSE: 4.3556
+
+LiquidOutput için özellik önem dereceleri:
+
+
+
+
+
+
+
+
+
+MAE: 4.3556
+MSE: 18.9711
+RMSE: 4.3556
+
+LiquidOutput için özellik önem dereceleri:
+
+
+
+
+
+
+
+
+MAE: 4.3556
+MSE: 18.9711
+RMSE: 4.3556
+
+LiquidOutput için özellik önem dereceleri:
+
+
+
+
+
+
+
+MAE: 4.3556
+MSE: 18.9711
+RMSE: 4.3556
+
+LiquidOutput için özellik önem dereceleri:
+
+
+
+
+
+MAE: 4.3556
+MSE: 18.9711
+RMSE: 4.3556
+
+LiquidOutput için özellik önem dereceleri:
+
+
+
+
+MAE: 4.3556
+MSE: 18.9711
+RMSE: 4.3556
+
+LiquidOutput için özellik önem dereceleri:
+
+
+MAE: 4.3556
+MSE: 18.9711
+RMSE: 4.3556
+
+LiquidOutput için özellik önem dereceleri:
+
+MAE: 4.3556
+MSE: 18.9711
+RMSE: 4.3556
+
+MAE: 4.3556
+MAE: 4.3556
+MAE: 4.3556
+MAE: 4.3556
+MSE: 18.9711
+MAE: 4.3556
+MSE: 18.9711
+MAE: 4.3556
+MAE: 4.3556
+MSE: 18.9711
+RMSE: 4.3556
+
+LiquidOutput için özellik önem dereceleri:
+
+
+
+
+
+
+
+
+
+
+
+
+
+

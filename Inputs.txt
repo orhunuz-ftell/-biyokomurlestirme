@@ -1,0 +1,24 @@
+Inputs
+
+PS: Particle size of the biomass
+C: Carbon content of the biomass
+H: Hydrogen content of the biomass
+N: Nitrogen content of the biomass
+O: Oxygen content of the biomass
+Ash: Ash content of the biomass
+V: Volatile matter content of the biomass
+FC: Fixed carbon content of the biomass
+Cel: Cellulose content of the biomass
+Hem: Hemicellulose content of the biomass
+Lig: Lignin content of the biomass
+HT: Pyrolysis temperature
+FR: Feed rate of the biomass into the reactor
+GFR: Gas flow rate into the pyrolysis reactor
+
+
+
+Outputs
+
+char: Yield of biochar
+oil: Yield of bio-oil
+gas: Yield of gas

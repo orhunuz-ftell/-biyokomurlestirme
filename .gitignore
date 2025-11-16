@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# Database files
+*.bak
+*.db
+*.sqlite3
+
+# Machine Learning Models (large binary files)
+*.joblib
+*.h5
+*.pkl
+*.pickle
+
+# Data files (can be large)
+*.csv
+*.xlsx
+*.xls
+
+# Logs
+*.log
+catboost_info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.bat
+
+# Output files
+*.png
+*.jpg
+*.jpeg
+*.pdf
+
+# Documents (uncomment if you want to track them)
+# *.docx
+# *.doc
+# *.pptx
