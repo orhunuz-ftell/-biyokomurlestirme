@@ -33,8 +33,11 @@ DB_CONNECTION_STRING = (
 # ============================================================================
 
 # Use the custom bio-oil mechanism from cantera_generation
+# Get absolute path to mechanism file
+_current_dir = os.path.dirname(os.path.abspath(__file__))
+_project_root = os.path.dirname(os.path.dirname(_current_dir))
 MECHANISM_PATH = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
+    _project_root,
     'cantera_generation',
     'config',
     'biooil_mechanism.yaml'

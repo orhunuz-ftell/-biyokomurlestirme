@@ -1,0 +1,62 @@
+================================================================================
+REFORMER-ONLY MODEL - DATA DICTIONARY
+================================================================================
+Generated: 2025-11-30 15:37:53
+Total records: 3150
+Total features: 40
+
+INPUT FEATURES (9 total)
+--------------------------------------------------------------------------------
+Bio-oil Composition (wt%):
+  Biooil_Aromatics_pct       - Aromatic compounds (toluene surrogate)
+  Biooil_Acids_pct           - Organic acids (acetic acid surrogate)
+  Biooil_Alcohols_pct        - Alcohols (ethanol surrogate)
+  Biooil_Furans_pct          - Furan compounds
+  Biooil_Phenols_pct         - Phenolic compounds
+  Biooil_Aldehydes_Ketones_pct - Aldehydes and ketones (acetone surrogate)
+
+Process Conditions:
+  Reformer_Temperature_C     - Steam reforming temperature (650-850°C)
+  Reformer_Pressure_bar      - Operating pressure (5-30 bar)
+  Steam_to_Carbon_Ratio      - Molar ratio of steam to carbon (2-6)
+
+OUTPUT FEATURES (Primary)
+--------------------------------------------------------------------------------
+Syngas Composition (mol%):
+  H2_molpercent              - Hydrogen (target product)
+  CO_molpercent              - Carbon monoxide
+  CO2_molpercent             - Carbon dioxide
+  CH4_molpercent             - Methane
+  H2O_molpercent             - Water (unreacted steam)
+  C2H4_molpercent            - Ethylene
+  C2H6_molpercent            - Ethane
+
+Performance Metrics:
+  H2_CO_Ratio                - H2/CO molar ratio (important for syngas applications)
+  H2_CO2_Ratio               - H2/CO2 molar ratio
+  CO_CO2_Ratio               - CO/CO2 ratio (WGS equilibrium indicator)
+  H2_DryBasis_molpercent     - H2 content excluding water
+  H2_Selectivity             - Fraction of H atoms converted to H2
+  Carbon_in_CO_percent       - Carbon distribution to CO
+  Carbon_in_CO2_percent      - Carbon distribution to CO2
+  Hydrogen_in_H2_percent     - Hydrogen distribution to H2
+
+Thermodynamic Properties:
+  Reformer_Enthalpy_J_mol    - Molar enthalpy (J/mol)
+  Reformer_Entropy_J_molK    - Molar entropy (J/mol·K)
+  Reformer_Density_kg_m3     - Gas density (kg/m³)
+  Equilibrium_Constant_WGS   - WGS reaction equilibrium constant
+
+DATA QUALITY
+--------------------------------------------------------------------------------
+  DataQualityFlag            - 'Valid', 'Warning', or 'Invalid'
+
+DATASET STATISTICS
+--------------------------------------------------------------------------------
+  Bio-oil compositions: 70
+  Temperature levels: 5
+  Pressure levels: 3
+  S/C ratio levels: 3
+  Total simulations: 3150
+
+================================================================================
