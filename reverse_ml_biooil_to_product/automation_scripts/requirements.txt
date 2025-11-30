@@ -1,0 +1,12 @@
+# Python Package Requirements for Aspen Automation
+# Install with: pip install -r requirements.txt
+
+# Core data processing
+pandas>=1.5.0
+numpy>=1.23.0
+
+# Windows COM interface for Aspen Plus
+pywin32>=305
+
+# SQL Server database connectivity
+pyodbc>=4.0.34
