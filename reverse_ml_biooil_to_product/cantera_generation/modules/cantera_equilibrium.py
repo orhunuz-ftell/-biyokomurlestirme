@@ -86,7 +86,6 @@ class EquilibriumCalculator:
                 'mole_fractions': {},
                 'mass_fractions': {},
                 'molar_concentrations': {},  # mol/m³
-                'total_moles': self.gas.n_moles,
                 'mean_molecular_weight': self.gas.mean_molecular_weight,
                 'density_kg_m3': self.gas.density,
                 'enthalpy_J_kg': self.gas.enthalpy_mass,
@@ -140,7 +139,6 @@ class EquilibriumCalculator:
                 'pressure_Pa': self.gas.P,
                 'mole_fractions': {},
                 'mass_fractions': {},
-                'total_moles': self.gas.n_moles,
                 'mean_molecular_weight': self.gas.mean_molecular_weight,
                 'density_kg_m3': self.gas.density,
                 'enthalpy_J_kg': self.gas.enthalpy_mass,

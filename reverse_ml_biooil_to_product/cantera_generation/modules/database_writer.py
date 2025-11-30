@@ -65,6 +65,7 @@ class DatabaseWriter:
           AND ABS(Temperature_C - ?) < 0.01
           AND ABS(Pressure_bar - ?) < 0.01
           AND ABS(SC_ratio - ?) < 0.01
+          AND SimulationSource = 'Cantera'
         """
 
         try:
@@ -72,7 +73,8 @@ class DatabaseWriter:
             row = self.cursor.fetchone()
             return row[0] if row else None
         except Exception as e:
-            print(f"[WARNING] Check existing simulation failed: {e}")
+            if config.VERBOSE:
+                print(f"[WARNING] Check existing simulation failed: {e}")
             return None
 
     def insert_simulation_master(self, biooil_id: int, temperature: float,
@@ -106,12 +108,15 @@ class DatabaseWriter:
         ) VALUES (?, ?, ?, ?, GETDATE(), ?, ?, ?)
         """
 
-        notes = f"Generated using Cantera v{config.__version__} with GRI-Mech 3.0"
+        notes = f"Generated using Cantera with custom bio-oil mechanism (GRI-Mech 3.0 + bio-oil surrogates)"
 
         try:
             self.cursor.execute(query, (
-                biooil_id, temperature, pressure, sc_ratio,
-                1 if converged else 0,
+                biooil_id,
+                temperature,
+                pressure,
+                sc_ratio,
+                'Converged' if converged else 'Failed',
                 simulation_source,
                 notes
             ))

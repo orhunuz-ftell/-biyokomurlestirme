@@ -34,11 +34,11 @@ INPUT_MATRIX_FILE = os.path.join(DATA_DIR, 'aspen_input_matrix.csv')
 # CANTERA SETTINGS
 # ==============================================================================
 
-# Chemical mechanism (GRI-Mech 3.0 - widely validated)
-MECHANISM = 'gri30.yaml'
+# Chemical mechanism (Custom bio-oil mechanism based on GRI-Mech 3.0)
+MECHANISM = os.path.join(os.path.dirname(__file__), 'biooil_mechanism.yaml')
 
 # Alternative mechanisms if needed
-BACKUP_MECHANISMS = ['gri30.xml', 'gri30.cti']
+BACKUP_MECHANISMS = ['gri30.yaml', 'gri30.xml', 'gri30.cti']
 
 # ==============================================================================
 # BIO-OIL COMPONENT MAPPING
