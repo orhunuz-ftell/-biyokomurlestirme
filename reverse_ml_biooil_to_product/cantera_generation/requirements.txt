@@ -1,0 +1,15 @@
+# Cantera Data Generation System - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core thermodynamic calculator
+cantera>=3.0.0
+
+# Database connectivity
+pyodbc>=4.0.39
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Optional: for enhanced logging and progress bars
+tqdm>=4.65.0
