@@ -1,0 +1,119 @@
+BİYO-YAĞ BUHAR REFORMİNG OPTİMİZASYONU VE MPC SİSTEMİ
+DANIŞMANA SORULACAK KRİTİK SORULAR
+============================================================
+
+TARİH: Aralık 2024
+KONU: Optimizasyon ve MPC Sistemi Planlama Onayı
+
+
+ÖNCELİK 0: VALİDASYON TEST KAPSAMI
+-----------------------------------
+
+Soru: MPC sistemi geliştirilirken kaç farklı biyo-yağ kompozisyonu ile test edilmeli?
+
+Seçenek A - Basit Validasyon (Önerilen):
+  • 1-2 örnek biyo-yağ kompozisyonu ile test
+  • Her test için 5 farklı amaç fonksiyonu senaryosu
+  • Toplam: ~5-10 optimizasyon problemi
+  • Süre: 5 hafta (~1 ay)
+  • Amaç: "Sistem çalışıyor mu?" doğrulaması
+  • Hızlı prototip geliştirme
+
+Seçenek B - Kapsamlı Validasyon:
+  • 30 farklı biyo-yağ kompozisyonu ile test (veri tabanından)
+  • Her test için 5 farklı amaç fonksiyonu senaryosu
+  • Toplam: 150 optimizasyon problemi
+  • Süre: 7 hafta (~1.5-2 ay)
+  • Amaç: Farklı kompozisyonlarda performans analizi
+  • Avantaj: Kompozisyon-koşul ilişkisi haritası, tez için daha zengin içerik
+
+NOT: Her iki durumda da nihai ürün SÜREKLI ÇALIŞAN MPC SİSTEMİ'dir.
+     Fark sadece geliştirme sırasındaki test/validasyon kapsamındadır.
+
+
+ÖNCELİK 1: H2/CO HEDEF ORANI
+-----------------------------
+
+Soru: Optimizasyon senaryolarında hangi H2/CO oranı hedeflenmelidir?
+
+Seçenekler:
+  a) Fischer-Tropsch sentezi için H2/CO = 2.0-2.5
+  b) Metanol sentezi için H2/CO = 2.0
+  c) Maksimum H2 verimi (H2/CO oranı kısıtı yok)
+  d) Başka bir hedef oran var mı?
+
+Not: Birden fazla senaryo da çalışılabilir.
+
+
+ÖNCELİK 2: AMAÇ FONKSİYON AĞIRLIKLARI
+--------------------------------------
+
+Soru: Çok amaçlı optimizasyonda öncelik sıralaması nedir?
+
+Amaç Fonksiyonları:
+  F1: Hidrojen (H2) verimi maksimizasyonu
+  F2: H2/CO oranının hedef değere yaklaştırılması
+  F3: CO2 emisyonu minimizasyonu
+
+Ağırlıklı toplam formülü:
+  Amaç = w1 × F1 + w2 × F2 + w3 × F3
+
+Sorular:
+  • w1, w2, w3 ağırlık değerleri nasıl olmalı?
+  • Öncelik sıralaması: H2 verimi mi, H2/CO oranı mı, yoksa CO2 emisyonu mu?
+  • Trade-off'lar kabul edilebilir mi?
+    Örnek: %5 daha az H2 karşılığında %20 daha az CO2 kabul edilebilir mi?
+
+
+ÖNCELİK 3: PROSES KISITLARI VE GÜVENLİK LİMİTLERİ
+--------------------------------------------------
+
+Soru: Optimizasyon ve MPC sisteminde dikkate alınması gereken ek kısıtlar var mı?
+
+Olası Kısıtlar:
+  • Sıcaklık artış hızı limiti var mı? (°C/dakika)
+  • Basınç değişim hızı limiti var mı? (bar/dakika)
+  • Minimum/maksimum buhar debisi kısıtı?
+  • Güvenlik/operasyon limitleri?
+  • Ekipman limitasyonları?
+
+Not: Bu kısıtlar MPC tasarımını etkileyecektir.
+
+
+ÖNCELİK 4: DENEYSEL DOĞRULAMA
+------------------------------
+
+Soru: Geliştirilen optimizasyon ve MPC sistemi deneysel olarak test edilecek mi?
+
+Seçenekler:
+  a) Sadece simülasyon (Cantera + ML model)
+  b) Laboratuvar reaktöründe deneysel doğrulama planlanıyor
+  c) İleride deneysel çalışma yapılabilir (tez kapsamı dışı)
+
+Not: Deneysel doğrulama planlanıyorsa, zaman planı ve metodoloji değişecektir.
+
+
+ÖNCELİK 5: YAYIN VE TEZ KAPSAMI
+--------------------------------
+
+Soru: Bu çalışma hangi formatta sunulacak?
+
+Seçenekler:
+  • Tez bölümü olarak (kaç bölüm?)
+  • Ayrı bir akademik makale mi?
+  • Konferans bildirisi mi?
+
+Beklenen çıktılar için önem sıralaması nedir?
+  • Optimizasyon sonuçları (optimal koşullar, Pareto frontları)
+  • MPC sistem performansı (set-point takibi, bozucu etki giderimi)
+  • Hassasiyet analizi
+  • Kompozisyon-koşul ilişkisi haritası
+
+
+============================================================
+SONUÇ:
+
+Bu soruların cevapları alındıktan sonra, IMPLEMENTATION_PLAN_FINAL.md
+oluşturulacak ve implementasyona başlanacaktır.
+
+Tahmini toplam süre: 5-7 hafta (validasyon kapsamına göre)
