@@ -1,0 +1,52 @@
+● Bu kod, hidrojen üretimi için metanın buhar reformasyonu (SMR - Steam Methane Reforming) prosesinin aşamalarını
+  temsil ediyor. Her aşamayı açıklayayım:
+
+  Aşama 1: Reformer Dengesi
+
+  reformer_out = self.equilibrium_calc.reformer_equilibrium(...)
+  Metanın buharla reaksiyonu - Ana reaksiyon:
+  - CH₄ + H₂O ⇌ CO + 3H₂ (yüksek sıcaklıkta, ~800-900°C)
+  - Gibbs serbest enerjisi minimizasyonu ile denge hesaplanıyor
+
+  ---
+  Aşama 2: Yüksek Sıcaklık Shift (HTS)
+
+  hts_temp_K = config.HTS_TEMPERATURE_C + 273.15
+  hts_out = self.equilibrium_calc.wgs_equilibrium(...)
+  Water-Gas Shift reaksiyonu (yüksek sıcaklıkta, ~350-450°C):
+  - CO + H₂O ⇌ CO₂ + H₂
+  - CO'yu H₂'ye dönüştürüyor, daha fazla hidrojen üretiliyor
+
+  ---
+  Aşama 3: Düşük Sıcaklık Shift (LTS)
+
+  lts_temp_K = config.LTS_TEMPERATURE_C + 273.15
+  lts_out = self.equilibrium_calc.wgs_equilibrium(...)
+  Aynı WGS reaksiyonu ama düşük sıcaklıkta (~200-250°C):
+  - Düşük sıcaklık termodinamik olarak daha yüksek CO dönüşümü sağlar
+  - Kalan CO'nun büyük kısmı H₂'ye dönüştürülür
+
+  ---
+  Aşama 4: Flash Ayırma
+
+  flash_vapor, flash_liquid = self.separation_models.flash_separation(...)
+  Su giderimi - Gaz karışımındaki su buharı yoğunlaştırılarak ayrılır:
+  - Sıvı faz: Su
+  - Buhar faz: H₂, CO₂, az miktarda CO, CH₄
+
+  ---
+  Aşama 5: CO₂ Giderimi
+
+  co2_treated, co2_stream = self.separation_models.co2_removal(...)
+  Karbondioksit absorpsiyonu (genellikle amin çözeltileriyle):
+  - Saf hidrojen elde etmek için CO₂ ayrılır
+  - co2_treated: Saflaştırılmış H₂ akımı
+  - co2_stream: Ayrılan CO₂
+
+  ---
+  Özet Akış Şeması
+
+  CH₄ + H₂O → [Reformer] → [HTS] → [LTS] → [Flash] → [CO₂ Giderimi] → Saf H₂
+                850°C       400°C    220°C    Su↓        CO₂↓
+
+  Bu, endüstriyel hidrojen üretiminin standart prosesidir.
