@@ -1,0 +1,181 @@
+RSER REVIEW PAPER - TODO LIST
+Generated: December 7, 2025
+
+========================================
+COMPLETED TASKS ✓
+========================================
+[✓] Master plan dokümantasyonu (8,000+ kelime)
+[✓] TİK raporlarından veri çıkarma
+[✓] Literatür analizi ve entegrasyon (14,000+ kelime)
+[✓] Figür 1: PRISMA akış şeması
+[✓] Figür 2: Bibliyometrik analiz (3 panel)
+[✓] Figür 4: Eksik veri heatmap
+[✓] Figür 5: Veri önişleme workflow
+[✓] Figür 6: Model performans karşılaştırması
+[✓] Tablo 2: Eksik veri analizi (Excel)
+[✓] Tablo 3: İmputasyon yöntemleri karşılaştırma (Excel)
+[✓] Proje ilerleme raporu
+
+========================================
+CURRENT PHASE: MANUSCRIPT WRITING
+========================================
+
+PRIORITY 1: Core Sections (Data-Heavy)
+[ ] Section 4: Critical Analysis of Data Challenges (2,500 words)
+    - BAŞLANGIÇ TARİHİ: 7 Aralık 2025
+    - Subsections:
+      * 4.1. Data Scarcity Issues
+      * 4.2. Missing Data Patterns (TİK-2 verisi)
+      * 4.3. Standardization Gap
+      * 4.4. Consequences for Model Performance
+    - Kullanılacak: TİK-2 istatistikleri, Figure 4, Table 2
+
+[ ] Section 5: Imputation & Preprocessing Strategies (2,000 words)
+    - Subsections:
+      * 5.1. Traditional Methods
+      * 5.2. Advanced Statistical Methods
+      * 5.3. Domain Knowledge-Based (TİK-3 innovation)
+      * 5.4. Dataset Organization Strategies
+    - Kullanılacak: TİK-3 metodolojisi, Figure 5, Table 3
+
+[ ] Section 6: Case Study - Predictive Performance Analysis (1,500 words)
+    - Subsections:
+      * 6.1. Dataset Description (70-sample database)
+      * 6.2. Algorithm Comparison
+      * 6.3. Results & Discussion (TİK-2 results)
+      * 6.4. Root Cause Analysis
+    - Kullanılacak: TİK-2 Table 2.1, Figure 6
+
+PRIORITY 2: Overview Section
+[ ] Section 3: Overview of ML in Pyrolysis (1,800 words)
+    - Subsections:
+      * 3.1. Bibliometric Analysis
+      * 3.2. Algorithm Landscape
+      * 3.3. Input-Output Patterns
+      * 3.4. Performance Benchmarks
+    - Kullanılacak: Figure 2, Literature review data, Table 1 (mevcut 7 entry)
+
+PRIORITY 3: Framework Sections
+[ ] Section 2: Methodology (1,200 words)
+    - PRISMA metodolojisi
+    - Search strategy
+    - Inclusion/exclusion criteria
+    - Data extraction protocol
+    - Kullanılacak: Figure 1
+
+[ ] Section 1: Introduction (1,500 words)
+    - 1.1. Biomass Pyrolysis in Circular Economy
+    - 1.2. Machine Learning Revolution
+    - 1.3. The Data Quality Paradox
+    - 1.4. Scope and Objectives
+
+[ ] Section 7: Recommendations & Future Perspectives (1,000 words)
+    - 7.1. For Researchers
+    - 7.2. For Journal Editors
+    - 7.3. For Industry
+    - 7.4. Emerging Directions
+
+[ ] Section 8: Conclusions (500 words)
+
+========================================
+OPTIONAL ENHANCEMENTS (Sonra yapılacak)
+========================================
+
+[ ] Tablo 1 Genişletme (7 → 50 entry)
+    - PDF'leri bul: C:\@biyokomurlestirme\biyyag_ftir\
+    - Her makaleden çıkar:
+      * Author (Year)
+      * Biomass type
+      * Dataset size (N)
+      * Algorithm used
+      * R², RMSE, MAE
+      * Input/output variables
+      * Missing data handling (if reported)
+    - Öncelikli PDF'ler:
+      * 1-huEtAl.pdf
+      * 2-1-s2.0-S0016236119306489-main.pdf
+      * 3-1-s2.0-S0196890416309001-main.pdf
+      * 4-1-s2.0-S0960852413015745-main.pdf
+      * 5-1-s2.0-S0960852416307660-main.pdf
+      * 6-1-s2.0-S0960852417302493-main.pdf
+      * 7-1-s2.0-S0960852418310484-main.pdf
+      * 8-1-s2.0-S2468203916301261-main.pdf
+      * 9-biooilML.pdf
+      * 10-applsci-09-03980-v2.pdf
+      * 11-s2.0-S0960148112003813-main.pdf
+      * 12-1-s2.0-S0016236120321608-main.pdf
+      * 13(12yan)1-s2.0-S0016236119302376-main.pdf
+    - Target: 30-50 total entries
+
+[ ] Tablo 4: Model Performance by Chemical Group
+    - TİK-2 Table 2.1'den genişletilmiş versiyon
+    - 11 output variable için detaylı metrikler
+
+[ ] Tablo 5: Recommended Reporting Checklist
+    - Minimum information standard for ML-pyrolysis papers
+    - Inspired by CONSORT/PRISMA
+
+[ ] Figure 3: Algorithm Usage Frequency
+    - (Şu an Figure 2 Panel C'de var, ayrı figür istenirse)
+
+[ ] Graphical Abstract (RSER requirement)
+    - Mandatory for submission
+    - 1-panel visual summary
+    - Highlight: Missing data crisis → Imputation strategy → Performance
+
+[ ] Highlights preparation (RSER requirement)
+    - 3-5 bullet points
+    - Max 85 characters each
+    - Draft hazır (00_MASTER_PLAN.md'de)
+
+========================================
+FINAL SUBMISSION PREPARATION
+========================================
+
+[ ] Abstract writing (max 300 words)
+[ ] Keywords selection (max 6)
+[ ] Reference formatting (100-150 refs)
+[ ] Author contributions statement
+[ ] Declaration of competing interest
+[ ] Data availability statement
+[ ] Supplementary materials preparation
+[ ] Language editing (professional service or native speaker)
+[ ] Format according to RSER guidelines
+[ ] Internal review with supervisor
+[ ] Final proofreading
+
+========================================
+TIMELINE ESTIMATE
+========================================
+
+Week 1 (Dec 8-14):   Sections 4-6 draft complete
+Week 2 (Dec 15-21):  Sections 1-3, 7-8 complete
+Week 3 (Dec 22-28):  Full draft revision
+Week 4 (Dec 29-Jan 4): Internal review
+Week 5 (Jan 5-11):   Language editing + formatting
+Week 6 (Jan 12-18):  FINAL SUBMISSION to RSER
+
+TARGET SUBMISSION: Mid-January 2026
+
+========================================
+NOTES & REMINDERS
+========================================
+
+- Tablo 1 genişletme opsiyonel, makale için mevcut 7 entry yeterli
+- Tablo 1'i sonradan reviewer isterse genişletebiliriz
+- Önce core contribution sections (4-6) tamamlanacak
+- Tüm figürler ve tablolar hazır, yazım sırasında referans verilebilir
+- Word count target: 8,000-12,000 words
+- RSER Impact Factor: ~15-16 (Q1)
+
+========================================
+CONTACT & COLLABORATION
+========================================
+
+Primary Author: Orhun Uzdiyem
+Supervisor: Prof. Dr. Hayati Olgun
+Institution: Ege University, Solar Energy Institute
+
+========================================
+END OF TODO LIST
+========================================
