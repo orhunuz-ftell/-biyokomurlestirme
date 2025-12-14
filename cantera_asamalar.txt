@@ -1,12 +1,18 @@
-● Bu kod, hidrojen üretimi için metanın buhar reformasyonu (SMR - Steam Methane Reforming) prosesinin aşamalarını
+● Bu kod, hidrojen üretimi için bio-oil buhar reformasyonu prosesinin aşamalarını
   temsil ediyor. Her aşamayı açıklayayım:
 
   Aşama 1: Reformer Dengesi
 
   reformer_out = self.equilibrium_calc.reformer_equilibrium(...)
-  Metanın buharla reaksiyonu - Ana reaksiyon:
-  - CH₄ + H₂O ⇌ CO + 3H₂ (yüksek sıcaklıkta, ~800-900°C)
-  - Gibbs serbest enerjisi minimizasyonu ile denge hesaplanıyor
+  Bio-oil bileşenlerinin buharla reaksiyonu - Ana reaksiyonlar:
+  - C₂H₅OH + 3H₂O ⇌ 6H₂ + 2CO₂ (ethanol reforming)
+  - CH₃COOH + 2H₂O ⇌ 4H₂ + 2CO₂ (acetic acid reforming)
+  - C₇H₈ + 7H₂O ⇌ 11H₂ + 7CO (toluene reforming)
+  - C₃H₆O + 3H₂O ⇌ 6H₂ + 3CO (acetone reforming)
+  - C₆H₆O + 6H₂O ⇌ 9H₂ + 6CO (phenol reforming)
+  - C₄H₄O + 4H₂O ⇌ 6H₂ + 4CO (furan reforming)
+  - Gibbs serbest enerjisi minimizasyonu ile denge hesaplanıyor (yüksek sıcaklıkta, ~800-900°C)
+  - Ürünler: H₂, CO, CO₂, CH₄ (yan ürün), H₂O
 
   ---
   Aşama 2: Yüksek Sıcaklık Shift (HTS)
@@ -46,7 +52,10 @@
   ---
   Özet Akış Şeması
 
-  CH₄ + H₂O → [Reformer] → [HTS] → [LTS] → [Flash] → [CO₂ Giderimi] → Saf H₂
-                850°C       400°C    220°C    Su↓        CO₂↓
+  Bio-oil + H₂O → [Reformer] → [HTS] → [LTS] → [Flash] → [CO₂ Giderimi] → Saf H₂
+  (C₂H₅OH,          850°C       400°C    220°C    Su↓        CO₂↓
+   CH₃COOH,
+   C₇H₈, vb.)
 
-  Bu, endüstriyel hidrojen üretiminin standart prosesidir.
+  Not: Bio-oil surrogate'leri: Ethanol, Acetic acid, Toluene, Acetone, Phenol, Furan
+  Bu, bio-oil'den hidrojen üretiminin termodinamik proses modellemesidir.

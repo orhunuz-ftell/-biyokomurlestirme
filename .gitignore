@@ -56,3 +56,6 @@ Desktop.ini
 # *.docx
 # *.doc
 # *.pptx
+
+# Node.js
+node_modules/

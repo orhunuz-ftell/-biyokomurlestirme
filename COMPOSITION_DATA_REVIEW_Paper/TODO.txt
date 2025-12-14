@@ -1,0 +1,345 @@
+BIO-OIL COMPOSITION DATA REVIEW PAPER - ACTION PLAN
+====================================================
+Last Updated: December 14, 2025
+Status: Planning Phase
+
+
+PHASE 1: PDF SCANNING & LITERATURE ASSESSMENT (1-2 days)
+=========================================================
+Goal: Determine typical data detail level across 41 papers
+
+[ ] Task 1.1: Select 10 representative PDFs for detailed analysis
+    - Criteria: Different years (2015-2024), different journals, different biomass types
+    - Files from: C:\@biyokomurlestirme\biyyag_ftir\
+    - Create list in: PDF_SELECTION.md
+
+[ ] Task 1.2: Create data assessment template
+    - Columns: Paper ID, Year, Journal, Biomass Type, Data Level (1-4), Individual Compounds (Yes/No/Count), Measurement Type, Data Availability Statement
+    - File: LITERATURE_DATA_ASSESSMENT.xlsx
+
+[ ] Task 1.3: Scan 10 selected PDFs
+    For each paper, record:
+    - [ ] Data detail level (1=yield only, 2=compound-class, 3=individual compounds, 4=full chromatogram)
+    - [ ] List individual compounds if reported (e.g., acetic acid, phenol, guaiacol)
+    - [ ] Measurement type (quantitative wt%, semi-quantitative peak area, qualitative)
+    - [ ] Data availability statement (if any)
+    - [ ] Notes on nomenclature used
+
+[ ] Task 1.4: Quick scan remaining 31 PDFs
+    - Record only: Data level (1-4), Individual compounds (Yes/No), Data availability (Yes/No)
+    - Goal: Get percentage distribution across all 41 papers
+
+[ ] Task 1.5: Calculate statistics
+    - [ ] % papers at each data level (1-4)
+    - [ ] % papers with individual compound data
+    - [ ] % papers with data availability statements
+    - [ ] % papers with quantitative measurements
+
+[ ] Task 1.6: Identify best/worst examples
+    - Best: Papers sharing Level 3-4 data (if any)
+    - Worst: Papers with only Level 1 (yield only)
+    - Typical: Most common pattern
+
+DELIVERABLE: LITERATURE_DATA_ASSESSMENT.xlsx with 41 papers analyzed
+
+
+PHASE 2: YOUR 70-SAMPLE DATABASE REVIEW (1 day)
+================================================
+Goal: Understand detail level and completeness of your curated dataset
+
+[ ] Task 2.1: Locate and read TİK reports
+    - Files: TİK-2, TİK-3, TİK-4 (mentioned in RSER paper)
+    - Location: Search in C:\@biyokomurlestirme\ for TİK or TIK files
+
+[ ] Task 2.2: Document database schema
+    Create file: DATABASE_SCHEMA.md with:
+    - [ ] List all variables/columns in your 70-sample database
+    - [ ] For composition data, specify: Compound-class level or individual compounds?
+    - [ ] For each variable, note: Measurement unit, missingness %, data source
+
+[ ] Task 2.3: Assess data detail level
+    Determine if your 70 samples have:
+    - [ ] Compound-class totals? (acids %, phenols %, aromatics %)
+    - [ ] Individual compounds? (acetic acid wt%, phenol wt%, guaiacol wt%)
+    - [ ] How many individual compounds? (count)
+    - [ ] Quantitative (wt%) or semi-quantitative (peak area)?
+
+[ ] Task 2.4: Calculate completeness
+    - [ ] % samples with complete biomass characterization (C, H, O, N, S)
+    - [ ] % samples with complete composition data (all variables filled)
+    - [ ] Most common missing variables
+    - [ ] Best-case sample (most complete)
+
+[ ] Task 2.5: Clarify data source
+    Answer: Are your 70 samples from:
+    - [ ] Your OWN experiments? (if yes, how many?)
+    - [ ] Literature extraction? (if yes, from which papers?)
+    - [ ] Mix of both? (specify breakdown)
+
+DELIVERABLE: DATABASE_SCHEMA.md + Data source clarification
+
+
+PHASE 3: PAPER TYPE DECISION (1 day)
+=====================================
+Goal: Choose Scenario A (Crisis Review), B (Database), or C (Hybrid)
+
+[ ] Task 3.1: Review Phase 1 results
+    - What % of 41 PDFs have Level 3-4 data? _______
+    - Is the "data crisis" real? (>70% shallow = Yes)
+
+[ ] Task 3.2: Review Phase 2 results
+    - Do your 70 samples have individual compound data? Yes / No
+    - Data detail level: 1 / 2 / 3 / 4
+
+[ ] Task 3.3: Apply decision matrix
+    Based on DECISION_AND_PLAN.md matrix:
+    - If your data is Level 3-4 AND literature is mostly shallow (<30% detailed) → Scenario C (HYBRID)
+    - If your data is Level 3-4 AND literature is mixed (30-70% detailed) → Scenario B (DATABASE)
+    - If your data is Level 1-2 AND literature is mostly shallow → Scenario A (CRISIS REVIEW)
+
+[ ] Task 3.4: Make decision
+    CHOSEN SCENARIO: _____________ (to be filled after Phase 1-2)
+
+    JUSTIFICATION:
+    - Literature assessment: ___________
+    - Your database: ___________
+    - Strategic fit: ___________
+
+[ ] Task 3.5: Adjust target journal
+    Based on scenario:
+    - Scenario A → RSER, Energy & Fuels
+    - Scenario B → Scientific Data, Data in Brief
+    - Scenario C → Fuel, Energy Conversion & Management, Bioresource Technology
+
+DELIVERABLE: SCENARIO_DECISION.md with justification
+
+
+PHASE 4: PAPER STRUCTURE & OUTLINE (2-3 days)
+==============================================
+Goal: Create detailed manuscript outline with sections, word counts, figures, tables
+
+[ ] Task 4.1: Define section structure
+    Based on chosen scenario, create outline with:
+    - [ ] Section 1: Introduction (target words: ______)
+    - [ ] Section 2: Methods (target words: ______)
+    - [ ] Section 3: Results (target words: ______)
+    - [ ] Section 4: Discussion (target words: ______)
+    - [ ] Section 5: Recommendations (target words: ______)
+    - [ ] Section 6: Conclusions (target words: ______)
+    Total target: 6,000-8,000 words
+
+[ ] Task 4.2: Plan figures (3-5 figures)
+    Possible figures:
+    - [ ] Figure 1: Data availability landscape (41 PDFs × data detail levels) - heatmap or bar chart
+    - [ ] Figure 2: Nomenclature inconsistency examples (same compound, different names)
+    - [ ] Figure 3: Database coverage diagram (if Scenario B/C) - variables × samples heatmap
+    - [ ] Figure 4: Comparison of your database vs literature (completeness, detail level)
+    - [ ] Figure 5: Recommendations flowchart (data sharing best practices)
+
+[ ] Task 4.3: Plan tables (2-4 tables)
+    Possible tables:
+    - [ ] Table 1: Systematic assessment of 41 papers (Paper, Year, Journal, Data Level, Individual Compounds Count, Availability Statement)
+    - [ ] Table 2: Database schema (if Scenario B/C) - Variable Name, Unit, Missingness %, Source
+    - [ ] Table 3: Nomenclature standardization (if relevant) - Compound Class, Synonyms Found, Standardized Name
+    - [ ] Table 4: Comparison with existing databases (if any exist)
+
+[ ] Task 4.4: Write detailed outline
+    For each section:
+    - [ ] List subsections (e.g., 3.1, 3.2, 3.3)
+    - [ ] Write 1-sentence description of each subsection
+    - [ ] Note which figures/tables appear in each section
+    - [ ] Allocate word count to subsections
+
+[ ] Task 4.5: Literature search for existing work
+    Search for:
+    - [ ] "bio-oil composition database"
+    - [ ] "pyrolysis data availability"
+    - [ ] "biomass composition data sharing"
+    Check if similar papers exist → cite or differentiate
+
+[ ] Task 4.6: Create reference framework
+    Start collecting key citations for:
+    - [ ] GC-MS methodology papers
+    - [ ] Data sharing best practices (FAIR principles, etc.)
+    - [ ] Existing pyrolysis reviews (for context)
+    - [ ] ML data requirements (to justify need)
+
+DELIVERABLE: MANUSCRIPT_OUTLINE.md (detailed 3-5 pages)
+
+
+PHASE 5: WRITING & FIGURE CREATION (1-2 weeks)
+===============================================
+Goal: Complete first draft of manuscript
+
+[ ] Task 5.1: Write Section 1 - Introduction
+    - [ ] Draft (~800-1000 words)
+    - [ ] Review and edit
+    - [ ] Insert references
+
+[ ] Task 5.2: Write Section 2 - Methods
+    - [ ] Draft (~600-800 words)
+    - [ ] Describe PDF selection criteria
+    - [ ] Describe database curation methodology (if Scenario B/C)
+    - [ ] Insert references
+
+[ ] Task 5.3: Write Section 3 - Results
+    - [ ] Draft (~1500-2000 words)
+    - [ ] Present Phase 1 findings (literature assessment)
+    - [ ] Present Phase 2 findings (database description, if Scenario B/C)
+    - [ ] Cross-reference figures and tables
+
+[ ] Task 5.4: Write Section 4 - Discussion
+    - [ ] Draft (~1200-1500 words)
+    - [ ] Interpret findings (why data crisis exists)
+    - [ ] Compare with other fields (chemistry, genomics data sharing)
+    - [ ] Discuss barriers (analytical cost, publication incentives)
+
+[ ] Task 5.5: Write Section 5 - Recommendations
+    - [ ] Draft (~800-1000 words)
+    - [ ] Data sharing standards
+    - [ ] Repository recommendations (Zenodo, Figshare)
+    - [ ] Journal policy suggestions
+    - [ ] Community actions
+
+[ ] Task 5.6: Write Section 6 - Conclusions
+    - [ ] Draft (~400-500 words)
+    - [ ] Summarize key findings
+    - [ ] Restate main message
+    - [ ] Future outlook
+
+[ ] Task 5.7: Create figures
+    For each planned figure:
+    - [ ] Generate using Python (matplotlib, seaborn) or Visio
+    - [ ] Export as high-res PNG (300 dpi minimum)
+    - [ ] Write detailed caption (3-5 sentences)
+    - [ ] Save in: 01_Figures/ folder
+
+[ ] Task 5.8: Create tables
+    For each planned table:
+    - [ ] Create in Excel or LaTeX
+    - [ ] Format for publication (clear headers, units, footnotes)
+    - [ ] Write detailed caption
+    - [ ] Save in: 02_Tables/ folder
+
+[ ] Task 5.9: Compile manuscript
+    - [ ] Integrate all sections into single Word document
+    - [ ] Add title page (title, authors, affiliations)
+    - [ ] Add abstract (250-300 words)
+    - [ ] Add keywords (5-6)
+    - [ ] Format references
+    - [ ] Insert figure/table captions
+
+[ ] Task 5.10: Internal quality check
+    - [ ] Word count check (6,000-8,000 target)
+    - [ ] All references cited and formatted correctly
+    - [ ] All figures/tables referenced in text
+    - [ ] Spell check and grammar check
+    - [ ] Consistency check (terminology, abbreviations)
+
+DELIVERABLE: MANUSCRIPT_DRAFT_v1.docx
+
+
+PHASE 6: REVIEW & REVISION (1 week)
+====================================
+Goal: Polish draft for submission
+
+[ ] Task 6.1: Self-review
+    - [ ] Read entire manuscript aloud
+    - [ ] Check logical flow between sections
+    - [ ] Verify all claims are supported by data
+    - [ ] Ensure figures tell clear story
+
+[ ] Task 6.2: Supervisor review
+    - [ ] Share draft with Prof. Olgun
+    - [ ] Wait for feedback (3-5 days)
+    - [ ] Document all comments
+
+[ ] Task 6.3: Address feedback
+    - [ ] Revise sections based on comments
+    - [ ] Update figures if needed
+    - [ ] Resolve any data questions
+
+[ ] Task 6.4: Format for target journal
+    - [ ] Download author guidelines for chosen journal
+    - [ ] Apply formatting requirements (font, spacing, heading styles)
+    - [ ] Ensure reference style matches journal (e.g., numbered vs author-year)
+    - [ ] Prepare supplementary materials (if database paper, include full dataset)
+
+[ ] Task 6.5: Create cover letter
+    - [ ] Address to editor
+    - [ ] Highlight novelty (first composition data availability assessment)
+    - [ ] Explain significance (enables ML advancement)
+    - [ ] Suggest potential reviewers (3-4 experts)
+
+[ ] Task 6.6: Prepare submission package
+    - [ ] Main manuscript (Word + PDF)
+    - [ ] Figures (separate high-res files)
+    - [ ] Tables (separate Excel files if required)
+    - [ ] Supplementary materials (dataset, code)
+    - [ ] Cover letter
+    - [ ] Author declaration forms
+
+DELIVERABLE: Complete submission package ready to upload
+
+
+CRITICAL DEPENDENCIES
+======================
+Phase 2 depends on: Locating TİK reports
+Phase 3 depends on: Completion of Phase 1 AND Phase 2
+Phase 4 depends on: Scenario decision from Phase 3
+Phase 5 depends on: Detailed outline from Phase 4
+
+
+ESTIMATED TIMELINE
+==================
+Phase 1: 2 days
+Phase 2: 1 day
+Phase 3: 0.5 days
+Phase 4: 2-3 days
+Phase 5: 7-10 days
+Phase 6: 5-7 days
+
+TOTAL: 18-24 days (3-4 weeks)
+
+Target Draft Completion: Early January 2026
+Target Submission: Mid-January 2026
+
+
+FILES TO CREATE (Throughout Project)
+=====================================
+Planning & Organization:
+- [✓] DECISION_AND_PLAN.md (this outlines our strategy)
+- [✓] TODO.txt (this file - action plan)
+- [✓] README.md (project overview)
+- [ ] PDF_SELECTION.md (Phase 1)
+- [ ] SCENARIO_DECISION.md (Phase 3)
+- [ ] MANUSCRIPT_OUTLINE.md (Phase 4)
+
+Data & Analysis:
+- [ ] LITERATURE_DATA_ASSESSMENT.xlsx (Phase 1)
+- [ ] DATABASE_SCHEMA.md (Phase 2)
+
+Manuscript:
+- [ ] Section drafts (Phase 5)
+- [ ] MANUSCRIPT_DRAFT_v1.docx (Phase 5)
+- [ ] MANUSCRIPT_FINAL.docx (Phase 6)
+- [ ] COVER_LETTER.docx (Phase 6)
+
+Supporting Materials:
+- [ ] 01_Figures/ folder with PNG files
+- [ ] 02_Tables/ folder with Excel files
+- [ ] 03_Supplementary/ folder with dataset/code (if Scenario B/C)
+
+
+NOTES
+=====
+- This is a SEPARATE paper from the completed ML review paper
+- No content overlap with ML paper (complementary focus)
+- Can be submitted simultaneously to different journals
+- ML paper can cite this paper for "data challenges" context
+- User's 70-sample database is core asset (either as example or as deliverable)
+- 41 PDFs provide systematic evidence for literature assessment
+- Scenario C (Hybrid) recommended as default, but flexible based on Phase 1-2 findings
+
+END OF TODO
+===========
