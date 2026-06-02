@@ -1,0 +1,112 @@
+{
+  "forward_surrogate_average": {
+    "R2": 0.9957865057810503,
+    "RMSE": 0.26763415584081146,
+    "MAE": 0.12480344546642165
+  },
+  "biooil_id_holdout_average": {
+    "R2": -0.5059733404475758,
+    "RMSE": 6.144316421467129,
+    "MAE": 4.623811049730438
+  },
+  "static_cases": [
+    {
+      "case": "aromatic_rich",
+      "BiooilID": 66,
+      "target_h2_co": 2.0,
+      "baseline_H2_CO_Ratio": 5.777907107109494,
+      "H2_CO_Ratio": 2.517958780269236,
+      "energy_cost": 0.65,
+      "Reformer_Temperature_C": 850.0,
+      "Reformer_Pressure_bar": 5.0,
+      "Steam_to_Carbon_Ratio": 2.0
+    },
+    {
+      "case": "aromatic_rich",
+      "BiooilID": 66,
+      "target_h2_co": 2.5,
+      "baseline_H2_CO_Ratio": 5.777907107109494,
+      "H2_CO_Ratio": 2.7701958824375046,
+      "energy_cost": 0.40625,
+      "Reformer_Temperature_C": 775.0,
+      "Reformer_Pressure_bar": 5.0,
+      "Steam_to_Carbon_Ratio": 2.0
+    },
+    {
+      "case": "acid_rich",
+      "BiooilID": 70,
+      "target_h2_co": 2.0,
+      "baseline_H2_CO_Ratio": 6.069834953368703,
+      "H2_CO_Ratio": 2.7863831151157488,
+      "energy_cost": 0.65,
+      "Reformer_Temperature_C": 850.0,
+      "Reformer_Pressure_bar": 5.0,
+      "Steam_to_Carbon_Ratio": 2.0
+    },
+    {
+      "case": "acid_rich",
+      "BiooilID": 70,
+      "target_h2_co": 2.5,
+      "baseline_H2_CO_Ratio": 6.069834953368703,
+      "H2_CO_Ratio": 2.7863831151157488,
+      "energy_cost": 0.65,
+      "Reformer_Temperature_C": 850.0,
+      "Reformer_Pressure_bar": 5.0,
+      "Steam_to_Carbon_Ratio": 2.0
+    },
+    {
+      "case": "balanced",
+      "BiooilID": 60,
+      "target_h2_co": 2.0,
+      "baseline_H2_CO_Ratio": 5.9067215199498815,
+      "H2_CO_Ratio": 2.6465598088596067,
+      "energy_cost": 0.65,
+      "Reformer_Temperature_C": 850.0,
+      "Reformer_Pressure_bar": 5.0,
+      "Steam_to_Carbon_Ratio": 2.0
+    },
+    {
+      "case": "balanced",
+      "BiooilID": 60,
+      "target_h2_co": 2.5,
+      "baseline_H2_CO_Ratio": 5.9067215199498815,
+      "H2_CO_Ratio": 2.819285077116737,
+      "energy_cost": 0.48750000000000004,
+      "Reformer_Temperature_C": 800.0,
+      "Reformer_Pressure_bar": 5.0,
+      "Steam_to_Carbon_Ratio": 2.0
+    }
+  ],
+  "mpc_final": {
+    "step": 9,
+    "actual_Biooil_Aromatics_pct": 0.0,
+    "actual_Biooil_Acids_pct": 31.324059763008766,
+    "actual_Biooil_Alcohols_pct": 8.758371973209686,
+    "actual_Biooil_Furans_pct": 11.334363730036063,
+    "actual_Biooil_Phenols_pct": 35.18804739824832,
+    "actual_Biooil_Aldehydes_Ketones_pct": 13.395157135497165,
+    "estimated_Biooil_Aromatics_pct": 1.455296277999878,
+    "estimated_Biooil_Acids_pct": 27.421113967895508,
+    "estimated_Biooil_Alcohols_pct": 4.778937816619873,
+    "estimated_Biooil_Furans_pct": 11.371757507324219,
+    "estimated_Biooil_Phenols_pct": 35.6398811340332,
+    "estimated_Biooil_Aldehydes_Ketones_pct": 19.333017349243164,
+    "measured_H2_molpercent": 45.444648669322326,
+    "measured_CO_molpercent": 17.014987700381024,
+    "measured_CO2_molpercent": 9.521965911004143,
+    "measured_CH4_molpercent": 0.26732897255439986,
+    "measured_H2O_molpercent": 27.760255557761397,
+    "measured_H2_CO_Ratio": 2.670859918888138,
+    "applied_Reformer_Temperature_C": 850.0,
+    "applied_Reformer_Pressure_bar": 5.0,
+    "applied_Steam_to_Carbon_Ratio": 2.0,
+    "next_Reformer_Temperature_C": 850.0,
+    "next_Reformer_Pressure_bar": 5.0,
+    "next_Steam_to_Carbon_Ratio": 2.0,
+    "next_predicted_H2_CO_Ratio": 2.669670069350028,
+    "next_predicted_H2_molpercent": 45.53854901618658,
+    "next_predicted_CO2_molpercent": 9.471838869208582,
+    "next_energy_cost": 0.65,
+    "objective": 1.5469160035665426
+  }
+}
