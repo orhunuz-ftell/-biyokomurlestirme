@@ -1,0 +1,324 @@
+TIK-5 SUNUM OZETI - BU DONEM YAPILAN CALISMA
+
+KISA ANA FIKIR
+
+Bu donemde onceki ters makine ogrenmesi modeli, tek basina bir tahmin araci
+olmaktan cikarilip proses izleme, optimizasyon ve kapali cevrim karar verme
+yapisina entegre edilmistir.
+
+Calismanin ana savunma cumlesi:
+
+"Onceki donemde gelistirilen ters ML modeli, reformer cikis gazindan biyoyag
+kompozisyonunu tahmin ediyordu. Bu donemde bu model soft-sensor olarak
+kullanildi; tahmin edilen biyoyag kompozisyonu ileri surrogate model ve
+optimizasyon bloguna aktarilarak hedef H2/CO oranina yaklasan reformer
+kosullari hesaplandi."
+
+
+1. BU DONEMIN ANA KATKILARI
+
+Calisma dort ana parca uzerinden yurutulmustur:
+
+1. Ters ML modeli soft-sensor haline getirildi.
+2. BiooilID bazli ek validasyon yapildi.
+3. Cantera yerine hizli calisan ileri surrogate model gelistirildi.
+4. Statik optimizasyon ve MPC-benzeri kapali cevrim senaryo kuruldu.
+
+Bu donemin onemi, modelin sadece "tahmin eden" bir yapi olmaktan cikip
+"proses kosulu secmeye yardim eden" bir hesaplamali karar verme zincirinin
+parcasi haline gelmesidir.
+
+
+2. GELISTIRILEN YAZILIM BILESENLERI
+
+src/common.py
+  Ortak kolon adlari, veri yollari ve yardimci fonksiyonlar.
+
+src/inverse_predictor.py
+  Ters ML modelini soft-sensor olarak calistiran tahmin arayuzu.
+
+src/biooil_holdout_validation.py
+  BiooilID bazli egitim/test ayrimi ve validasyon metrikleri.
+
+src/surrogate_model.py
+  Ileri surrogate model egitimi ve performans degerlendirmesi.
+
+src/optimization.py
+  Amac fonksiyonu ve statik optimizasyon hesaplamalari.
+
+src/mpc_controller.py
+  Basit MPC dongusu ve bozucu etki senaryosu.
+
+run_case_studies.py
+  Statik optimizasyon ve MPC case-study calistirma dosyasi.
+
+
+3. SOFT-SENSOR YAKLASIMI
+
+Soft-sensor, dogrudan veya hizli olculmesi zor olan bir proses degiskeninin,
+olculebilen baska degiskenlerden hesaplamali olarak tahmin edilmesidir.
+
+Bu calismada dogrudan hizli olculmesi zor olan degisken:
+  Biyoyag kompozisyonu.
+
+Daha kolay izlenebilen degiskenler:
+  Reformer cikisindaki H2, CO, CO2, CH4, H2O ve isletme kosullari.
+
+Model girdileri:
+  - Reformer sicakligi
+  - Reformer basinci
+  - Buhar/karbon orani
+  - H2, CO, CO2, CH4, H2O mol yuzdeleri
+
+Model ciktilari:
+  - Aromatikler
+  - Asitler
+  - Alkoller
+  - Furanlar
+  - Fenoller
+  - Aldehit-ketonlar
+
+Savunmada vurgulanacak nokta:
+
+"Soft-sensor dogrudan proses kosulunu secmiyor. Once biyoyag kompozisyonunu
+tahmin ediyor. Optimizasyon blogu da bu tahmini kullanarak uygun T, P ve S/C
+degerlerini hesapliyor."
+
+
+4. BIOOILID BAZLI VALIDASYON
+
+Onceki donemde model performansi satir bazli train/test ayrimi ile
+degerlendirilmisti. Bu daha kolay bir testtir; cunku ayni biyoyag
+kompozisyonuna ait farkli proses kosullari hem egitimde hem testte yer
+alabilir.
+
+Bu donemde daha zor ve daha gercekci bir test yapildi:
+  BiooilID bazli holdout validasyonu.
+
+Kurgu:
+  - Toplam 30 biyoyag kompozisyonu
+  - 24 biyoyag egitimde
+  - 6 biyoyag testte
+  - Egitim: 1080 ornek
+  - Test: 270 ornek
+
+Bu validasyonda hizli genelleme denetimi icin ExtraTrees tabanli cok ciktili
+regresyon modeli kullanildi.
+
+Sonuclar:
+  Aromatikler        R2 = 0.951   MAE = %5.84
+  Asitler            R2 = 0.803   MAE = %5.23
+  Fenoller           R2 = 0.698
+  Aldehit-ketonlar   R2 = 0.624
+  Furanlar           R2 = 0.464
+  Alkoller           R2 negatif
+
+Yorum:
+
+Aromatikler ve asitler gibi bilesenlerde yeni biyoyaglara karsi guclu
+genelleme gorulmustur. Alkol bileseninde negatif R2 elde edilmistir. Bu durum,
+alkol bileseninin test kumesindeki dusuk varyansi ve singaz uzerindeki daha
+zayif/karisan etkisiyle aciklanabilir. Ortalama MAE yine %4.62 seviyesinde
+kalmistir.
+
+Savunma cumlesi:
+
+"BiooilID bazli test, modelin uygulama sinirlarini gormek icin yapildi.
+Satir bazli test interpolasyon kabiliyetini, BiooilID bazli test ise tamamen
+yeni biyoyaglara genelleme kabiliyetini sinar. Sonuclar modelin bazi
+bilesenlerde guclu, bazi bilesenlerde ise belirsizlige acik oldugunu
+gostermistir."
+
+
+5. ILERI SURROGATE MODEL
+
+Optimizasyon ve MPC sirasinda her aday proses kosulu icin Cantera calistirmak
+zaman alacagi icin ileri surrogate model gelistirildi.
+
+Ters model:
+  Singaz + proses kosullari -> biyoyag kompozisyonu
+
+Ileri surrogate model:
+  Biyoyag kompozisyonu + proses kosullari -> singaz kompozisyonu ve H2/CO
+
+Ileri model girdileri:
+  - 6 biyoyag bilesen grubu
+  - Sicaklik
+  - Basinc
+  - Buhar/karbon orani
+
+Ileri model ciktilari:
+  - H2
+  - CO
+  - CO2
+  - CH4
+  - H2O
+  - H2/CO orani
+
+Performans:
+  Ortalama R2   = 0.996
+  Ortalama RMSE = 0.268
+  Ortalama MAE  = 0.125
+
+Savunmada dikkatli ifade:
+
+"Bu yuksek R2, deneysel reaktor dogrulamasi anlamina gelmez. Modelin Cantera
+tabanli simulasyon veri uzayini hizli ve yuksek dogrulukla temsil ettigini
+gosterir."
+
+
+6. OPTIMIZASYON PROBLEMI
+
+Optimizasyonun amaci:
+  Hedef H2/CO oranina yaklasirken daha uygun isletme kosullarini secmek.
+
+Karar degiskenleri ve sinirlar:
+  Reformer sicakligi: 650-850 C
+  Reformer basinci: 5-30 bar
+  Buhar/karbon orani: 2-6
+
+Amac fonksiyonu bilesenleri:
+  - H2/CO hedef sapmasi
+  - Normalize isletme cezasi
+  - H2 alt sinir cezasi
+  - CO2 ust sinir cezasi
+  - MPC icin kontrol hareketi cezasi
+
+Yontem:
+  Izgara tabanli tarama yaklasimi kullanildi. Her aday T, P ve S/C noktasi
+  ileri surrogate model ile degerlendirildi. En dusuk amac fonksiyonu degerini
+  veren kosul secildi.
+
+Onemli sinirlama:
+
+Buradaki "maliyet" gercek enerji veya ekonomik maliyet hesabi degildir.
+Sicaklik, basinc ve S/C'ye dayali basitlestirilmis normalize isletme cezasidir.
+
+
+7. STATIK OPTIMIZASYON SONUCLARI
+
+Uc biyoyag tipi incelendi:
+  - Aromatik bakimindan zengin biyoyag
+  - Asit bakimindan zengin biyoyag
+  - Dengeli kompozisyonlu biyoyag
+
+Baslangic kosullari:
+  Sicaklik = 750 C
+  Basinc   = 15 bar
+  S/C      = 4
+
+Hedefler:
+  H2/CO = 2.0
+  H2/CO = 2.5
+
+Sonuclar:
+  Baslangicta H2/CO yaklasik 5.78-6.07 araligindaydi.
+  Optimizasyon sonrasinda H2/CO yaklasik 2.52-2.82 araligina indirildi.
+
+Yorum:
+
+H2/CO = 2.5 hedefi, ozellikle aromatik zengin ve dengeli biyoyaglarda daha iyi
+yakalanmistir. Asit zengin biyoyagda hedefe yaklasmak icin model yuksek
+sicaklik ve dusuk basinc kosulunu secmistir.
+
+H2/CO = 2.0 hedefi mevcut karar degiskeni sinirlari icinde tam olarak
+yakalanamamistir. Bu, calismanin basarisiz oldugunu degil, mevcut kontrol
+sinirlari ve veri uzayi icinde bu hedefin her biyoyag icin erisilebilir
+olmadigini gosterir.
+
+Savunma cumlesi:
+
+"Optimizasyon H2/CO oranini baslangictaki 5.8-6.1 bandindan 2.5-2.8 bandina
+cekebildi. Ancak 2.0 hedefi mevcut sinirlar icinde tam erisilebilir gorunmedi.
+Bu nedenle sonuclari mutlak optimum olarak degil, tanimlanan sinirlar altinda
+erisilebilen en iyi calisma noktalari olarak yorumluyorum."
+
+
+8. MPC-BENZERI KAPALI CEVRIM SENARYO
+
+Bu senaryo, degisen biyoyag kompozisyonu altinda sistemin H2/CO oranini hedefe
+yakin tutup tutamayacagini gormek icin kuruldu.
+
+Baslangic:
+  Biyoyag tipi       = Dengeli kompozisyon
+  BiooilID           = 60
+  Sicaklik           = 750 C
+  Basinc             = 15 bar
+  S/C                = 4
+  Hedef H2/CO        = 2.0
+  Bozucu etki zamani = 5. zaman adimi
+
+Kapali cevrim isleyis:
+  1. Olculen singaz ve mevcut kosullar soft-sensor modeline verildi.
+  2. Soft-sensor biyoyag kompozisyonunu tahmin etti.
+  3. Bu tahmin ileri surrogate modele aktarildi.
+  4. Optimizasyon blogu yeni T, P ve S/C degerlerini secti.
+  5. Bir sonraki adimda dongu tekrarlandi.
+
+Sonuclar:
+  Baslangic H2/CO = 5.907
+
+  Ilk kontrol hamlesi:
+    T   = 850 C
+    P   = 5 bar
+    S/C = 2
+
+  Kontrol sonrasi H2/CO yaklasik 2.65 seviyesine dustu.
+
+  5. zaman adiminda bozucu etki uygulandi:
+    - Asit icerigi artirildi.
+    - Aromatik ve fenolik bilesenler azaltildi.
+
+  Bozucu etki sonrasinda H2/CO yaklasik 2.67 seviyesine yerlesti.
+
+Ozet tablo:
+  Zaman 0: baslangic, T=750 C, P=15 bar, S/C=4, H2/CO=5.907
+  Zaman 1: kontrol sonrasi, T=850 C, P=5 bar, S/C=2, H2/CO=2.647
+  Zaman 5: bozucu etki sonrasi, T=850 C, P=5 bar, S/C=2, H2/CO=2.671
+  Zaman 9: son durum, T=850 C, P=5 bar, S/C=2, H2/CO=2.671
+
+Savunma cumlesi:
+
+"Kapali cevrim senaryoda amac tam endustriyel MPC uygulamasi gostermek degil,
+soft-sensor, ileri surrogate model ve optimizasyon blogunun birlikte
+calisabildigini gostermekti. Kompozisyon bozucu etkisine ragmen H2/CO orani
+5.907'den yaklasik 2.65-2.67 bandina cekildi ve bu bantta kararlı kaldi."
+
+
+9. SAVUNMADA DIKKAT EDILECEK SINIRLAR
+
+Bu calisma deneysel olarak dogrulanmis nihai proses kontrol sistemi degildir.
+Cantera tabanli simulasyon verisi uzerinde gelistirilmis hesaplamali bir
+tahmin-optimizasyon is akisidir.
+
+Raporda MPC olarak adlandirilan kisim tam dinamik MPC degildir. Tahmin ufku,
+kontrol ufku, dinamik proses modeli, gecikmeler ve aktuator kisitlari iceren
+tam MPC formu yerine, MPC-benzeri tekrarlı kapali cevrim optimizasyon
+senaryosudur.
+
+Optimizasyondaki maliyet terimi gercek enerji/ekonomik maliyet degildir.
+Basitlestirilmis normalize isletme cezasidir.
+
+BiooilID validasyonu ExtraTrees ile yapilmis ek bir genelleme denetimidir.
+Kapali cevrimde soft-sensor olarak onceki MLP modeli kullanilmistir.
+
+Ters tahmin problemi fiziksel olarak tekil degildir. Benzer singaz
+kompozisyonlari birden fazla biyoyag kompozisyonuna karsilik gelebilir.
+
+Ileri surrogate modelin R2 = 0.996 sonucu deneysel reaktor dogrulamasi degil,
+Cantera simulasyon veri uzayinin basarili sekilde yeniden uretildigini gosterir.
+
+Optimumlarin siklikla T ust siniri, P alt siniri ve S/C alt sinirina gitmesi,
+sonuclarin "serbest optimum" degil, tanimlanan sinirlar altinda erisilebilen
+en iyi noktalar oldugunu gosterir.
+
+
+10. SUNUM ICIN TEK CUMLELIK OZET
+
+"Bu donemde onceki ters ML modeli proses izleme ve karar verme zincirine
+entegre edilerek soft-sensor olarak kullanilmis, Cantera simulasyonlarini hizli
+temsil eden yuksek dogruluklu bir ileri surrogate model gelistirilmis, bu iki
+model statik optimizasyon ve MPC-benzeri kapali cevrim senaryoda birlestirilmis
+ve biyoyag kompozisyonundaki degisime ragmen H2/CO oraninin baslangictaki
+yaklasik 5.9 seviyesinden 2.65-2.67 bandina indirilebildigi gosterilmistir."
+
