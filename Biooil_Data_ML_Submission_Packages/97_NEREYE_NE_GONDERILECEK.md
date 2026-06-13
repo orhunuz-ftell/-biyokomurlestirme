@@ -174,4 +174,3 @@ Dergiye degil, danismana/ortak yazarlara on kontrol icin mail atacaksan ilk etap
 - Data repository DOI/URL.
 - Bioresource Technology icin elle hazirlanmis graphical abstract.
 - Figürlerin son yuksek cozunurluklu halleri.
-

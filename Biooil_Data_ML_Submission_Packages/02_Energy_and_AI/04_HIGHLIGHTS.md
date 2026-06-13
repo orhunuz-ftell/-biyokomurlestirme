@@ -1,8 +1,7 @@
 # Highlights
 
+- Cantera generated thermodynamic data for bio-oil reforming.
 - An AI soft sensor maps reformer syngas to bio-oil composition.
-- SQL curation defines the limits of reusable bio-oil data.
 - An MLP achieved row-wise R2 = 0.863 and MAE = 4.03%.
-- Group holdout exposed weaker transfer to unseen bio-oils.
-- Data-aware validation is essential for energy AI soft sensors.
-
+- The workflow supports future MPC of bio-oil reforming.
+- Group holdout clarified transfer limits for unseen bio-oils.

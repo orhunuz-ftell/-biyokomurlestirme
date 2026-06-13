@@ -6,11 +6,11 @@ Target journal: Bioresource Technology
 
 ## Title
 
-Data availability constraints and deep learning-based inverse prediction of bio-oil composition from steam reforming syngas
+Machine-learning soft sensor for bio-oil steam reforming: Cantera-generated data and inverse prediction of bio-oil composition from syngas
 
 ## Running title
 
-Bio-oil inverse prediction from syngas
+Bio-oil reforming soft sensor
 
 ## Authors
 
@@ -36,7 +36,7 @@ Phone: [phone number]
 
 ## Acknowledgements
 
-The authors thank [names/institutions to be confirmed] for thesis supervision, technical discussions, and support during the development of the SQL database, Cantera simulation workflow, and machine-learning models.
+The authors thank [names/institutions to be confirmed] for thesis supervision, technical discussions, and support during the development of the bio-oil composition database, Cantera simulation workflow, machine-learning models, and soft-sensor/MPC framework.
 
 ## Declaration of Competing Interest
 
@@ -61,4 +61,3 @@ Orhun Uzdiyem: Conceptualization, Data curation, Methodology, Software, Formal a
 ## Declaration of generative AI and AI-assisted technologies
 
 During preparation of the submission package, AI-assisted tools were used to organize source notes, draft editorial text, and prepare journal-specific submission materials. The authors reviewed, verified, and edited the content and take full responsibility for the final manuscript.
-

@@ -14,11 +14,11 @@ This is the strongest first target because the article combines bioresource tech
 
 ## Target framing
 
-Use the data-availability review as the motivation and the SQL evidence layer. Use the Cantera and ML workflow as the original contribution.
+Use the literature-derived bio-oil database as the source of realistic feed compositions for Cantera simulation. Use the Cantera-generated synthetic reforming dataset, inverse ML model, and soft-sensor/MPC relevance as the main original contribution.
 
 Target title:
 
-Data availability constraints and deep learning-based inverse prediction of bio-oil composition from steam reforming syngas
+Machine-learning soft sensor for bio-oil steam reforming: Cantera-generated data and inverse prediction of bio-oil composition from syngas
 
 ## Journal-specific requirements reflected here
 
@@ -64,4 +64,3 @@ Data availability constraints and deep learning-based inverse prediction of bio-
 - Confirm whether TIK5-derived figures should be included or regenerated as publication figures.
 - Run or document a final group-based validation with the MLP, or keep the current BiooilID holdout as a limitation.
 - Deposit the cleaned dataset and scripts in a repository, or write a clear reason why data cannot yet be shared.
-

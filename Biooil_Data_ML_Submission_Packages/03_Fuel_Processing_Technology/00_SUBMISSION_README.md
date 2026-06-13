@@ -8,13 +8,13 @@ Official guide: https://www.sciencedirect.com/journal/fuel-processing-technology
 
 ## Fit
 
-This is the safer technical alternative. The manuscript should emphasize steam reforming, syngas quality, hydrogen-oriented fuel processing, and process monitoring. The data-availability section should be shorter and used mainly to justify why a soft sensor is needed.
+This is the safer technical alternative. The manuscript should emphasize steam reforming, syngas quality, hydrogen-oriented fuel processing, process monitoring, and future MPC use.
 
 ## Target framing
 
 Use the manuscript as a fuel-processing soft-sensor article:
 
-Fuel-processing soft sensor for bio-oil steam reforming: data-curated inverse prediction from syngas
+Fuel-processing soft sensor for bio-oil steam reforming using Cantera-generated syngas data
 
 ## Journal-specific requirements reflected here
 
@@ -43,4 +43,3 @@ Fuel-processing soft sensor for bio-oil steam reforming: data-curated inverse pr
 - Increase emphasis on fuel processing and hydrogen/syngas quality.
 - Reduce review-style data-stewardship language in the introduction.
 - Decide whether MPC/optimization results should remain supplementary or be excluded.
-

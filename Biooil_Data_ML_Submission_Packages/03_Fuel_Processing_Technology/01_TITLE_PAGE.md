@@ -6,7 +6,7 @@ Target journal: Fuel Processing Technology
 
 ## Title
 
-Fuel-processing soft sensor for bio-oil steam reforming: data-curated inverse prediction from syngas
+Fuel-processing soft sensor for bio-oil steam reforming using Cantera-generated syngas data
 
 ## Running title
 
@@ -61,4 +61,3 @@ Orhun Uzdiyem: Conceptualization, Data curation, Methodology, Software, Formal a
 ## Declaration of generative AI and AI-assisted technologies
 
 During preparation of the submission package, AI-assisted tools were used to organize source notes, draft editorial text, and prepare journal-specific submission materials. The authors reviewed, verified, and edited the content and take full responsibility for the final manuscript.
-

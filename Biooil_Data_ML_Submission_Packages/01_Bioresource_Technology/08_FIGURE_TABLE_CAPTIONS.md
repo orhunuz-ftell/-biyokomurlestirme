@@ -4,11 +4,11 @@ Bioresource Technology allows a maximum of 6 figures and/or tables unless justif
 
 ## Figures
 
-Figure 1. Integrated workflow from literature-derived bio-oil composition records to SQL curation, Cantera reforming simulations, inverse machine learning, and soft-sensor interpretation.
+Figure 1. Integrated workflow from literature-derived bio-oil composition records to Cantera reforming simulations, inverse machine learning, and soft-sensor/MPC interpretation.
 
 Suggested source: redraw from `tik5/figures/tik5_figure_b03_soft_sensor_workflow.png` and TIK4 workflow notes.
 
-Figure 2. SQL composition-data completeness map showing missingness across the 70 `Biooil` records and major compound classes.
+Figure 2. Simulation-ready bio-oil composition curation showing the mapping from literature-derived class-level records to six target groups.
 
 Suggested source: regenerate from SQL audit values.
 
@@ -32,11 +32,10 @@ Suggested source: combine `tik5/figures/tik5_figure_b05_split_comparison.png` an
 
 If the 6 item limit is strict, move these tables to supplementary material.
 
-Table S1. SQL database table counts and data sources.
+Table S1. Bio-oil database table counts and data sources.
 
 Table S2. Bio-oil composition missingness by class.
 
 Table S3. ML model performance by component.
 
 Table S4. BiooilID holdout performance by component.
-

@@ -8,15 +8,15 @@ Official guide: https://www.sciencedirect.com/journal/energy-and-ai/publish/guid
 
 ## Fit
 
-This is the strongest second target if the manuscript is framed around AI methodology for an energy-conversion soft sensor. The data-availability section should be shorter than in the Bioresource Technology version. The novelty should emphasize inverse learning, non-unique thermodynamic mappings, group-aware validation, and the practical limits of deploying AI under sparse composition data.
+This is the strongest second target if the manuscript is framed around AI methodology for an energy-conversion soft sensor. The novelty should emphasize Cantera-generated synthetic data, inverse learning, non-unique thermodynamic mappings, soft-sensor deployment, and future MPC integration.
 
 ## Target framing
 
-Use the manuscript as an AI-enabled inverse soft-sensor study for bio-oil steam reforming. The SQL audit becomes the data-scarcity motivation and a reproducibility/data-quality layer.
+Use the manuscript as an AI-enabled inverse soft-sensor study for bio-oil steam reforming. The literature-derived bio-oil database becomes the feed-composition source for Cantera synthetic data generation.
 
 Target title:
 
-AI-enabled inverse prediction of bio-oil composition from steam reforming syngas under data availability constraints
+AI-enabled soft sensor for bio-oil steam reforming using Cantera-generated data and inverse syngas-to-composition prediction
 
 ## Journal-specific requirements reflected here
 
@@ -46,4 +46,3 @@ AI-enabled inverse prediction of bio-oil composition from steam reforming syngas
 - Strengthen the AI novelty language but avoid overclaiming universal generalization.
 - Add uncertainty quantification if possible.
 - Run MLP group split if time allows; otherwise clearly label the current group split as an ExtraTrees audit.
-

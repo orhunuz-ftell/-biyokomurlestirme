@@ -1,0 +1,108 @@
+{
+  "step1_objective": {
+    "weights": {
+      "ratio": 4.0,
+      "h2": 3.0,
+      "ch4": 2.0,
+      "co2": 1.0,
+      "energy": 1.5,
+      "coke": 1.5,
+      "move": 0.0
+    },
+    "target_h2_co": 2.5,
+    "form": "J = 4*(H2/CO sapma)^2 + 3*(H2 acigi) + 2*CH4 + 1*CO2 + 1.5*enerji + 1.5*koklasma"
+  },
+  "biooil": {
+    "name": "balanced",
+    "BiooilID": 60,
+    "composition": {
+      "Biooil_Aromatics_pct": 1.08,
+      "Biooil_Acids_pct": 24.86,
+      "Biooil_Alcohols_pct": 9.19,
+      "Biooil_Furans_pct": 11.89,
+      "Biooil_Phenols_pct": 38.92,
+      "Biooil_Aldehydes_Ketones_pct": 14.05
+    }
+  },
+  "step2_optimum_before": {
+    "conditions": {
+      "Reformer_Temperature_C": 775.0,
+      "Reformer_Pressure_bar": 5.0,
+      "Steam_to_Carbon_Ratio": 2.0
+    },
+    "H2_CO_Ratio": 2.9486,
+    "syngas": {
+      "H2_molpercent": 44.582,
+      "CO_molpercent": 15.12,
+      "CO2_molpercent": 11.092,
+      "CH4_molpercent": 1.311,
+      "H2O_molpercent": 27.795
+    },
+    "objective": 3.031,
+    "term_weighted": {
+      "ratio": 0.129,
+      "h2": 0.325,
+      "ch4": 0.524,
+      "co2": 0.693,
+      "energy": 0.609,
+      "coke": 0.75
+    },
+    "deviation_from_target": 0.4486
+  },
+  "step3_4_disturbance_scenarios": {
+    "standart_8puan": {
+      "disturbed_composition": {
+        "Biooil_Aromatics_pct": 0.0,
+        "Biooil_Acids_pct": 31.32,
+        "Biooil_Alcohols_pct": 8.76,
+        "Biooil_Furans_pct": 11.33,
+        "Biooil_Phenols_pct": 35.19,
+        "Biooil_Aldehydes_Ketones_pct": 13.4
+      },
+      "step3_at_old_optimum": {
+        "H2_CO_Ratio": 2.9816,
+        "objective": 3.0414,
+        "deviation_from_target": 0.4816
+      },
+      "step4_new_optimum": {
+        "conditions": {
+          "Reformer_Temperature_C": 775.0,
+          "Reformer_Pressure_bar": 5.0,
+          "Steam_to_Carbon_Ratio": 2.0
+        },
+        "H2_CO_Ratio": 2.9816,
+        "objective": 3.0414,
+        "deviation_from_target": 0.4816
+      },
+      "optimum_moved": false,
+      "delta_H2CO_old_vs_new_optimum": 0.033
+    },
+    "buyutulmus_24puan": {
+      "disturbed_composition": {
+        "Biooil_Aromatics_pct": 0.0,
+        "Biooil_Acids_pct": 41.79,
+        "Biooil_Alcohols_pct": 7.86,
+        "Biooil_Furans_pct": 10.17,
+        "Biooil_Phenols_pct": 28.16,
+        "Biooil_Aldehydes_Ketones_pct": 12.02
+      },
+      "step3_at_old_optimum": {
+        "H2_CO_Ratio": 3.0296,
+        "objective": 3.0774,
+        "deviation_from_target": 0.5296
+      },
+      "step4_new_optimum": {
+        "conditions": {
+          "Reformer_Temperature_C": 775.0,
+          "Reformer_Pressure_bar": 5.0,
+          "Steam_to_Carbon_Ratio": 2.0
+        },
+        "H2_CO_Ratio": 3.0296,
+        "objective": 3.0774,
+        "deviation_from_target": 0.5296
+      },
+      "optimum_moved": false,
+      "delta_H2CO_old_vs_new_optimum": 0.081
+    }
+  }
+}

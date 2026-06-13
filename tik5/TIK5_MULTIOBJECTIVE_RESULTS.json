@@ -1,0 +1,463 @@
+{
+  "weights": {
+    "ratio": 4.0,
+    "h2": 3.0,
+    "ch4": 2.0,
+    "co2": 1.0,
+    "energy": 1.5,
+    "coke": 1.5,
+    "move": 0.0
+  },
+  "normalization": {
+    "H2_REF": 50.0,
+    "CH4_REF": 5.0,
+    "CO2_REF": 16.0
+  },
+  "static_single_vs_multi": {
+    "balanced": {
+      "BiooilID": 60,
+      "single_objective": {
+        "conditions": {
+          "Reformer_Temperature_C": 850.0,
+          "Reformer_Pressure_bar": 5.0,
+          "Steam_to_Carbon_Ratio": 2.0
+        },
+        "objective": 0.02749411529339451,
+        "syngas": {
+          "H2_molpercent": 45.60854220062054,
+          "CO_molpercent": 17.23314245457128,
+          "CO2_molpercent": 9.470920964039367,
+          "CH4_molpercent": 0.28047695283589086,
+          "H2O_molpercent": 27.4068933227855
+        },
+        "H2_CO_Ratio": 2.6465598088596067,
+        "term_raw": {
+          "ratio": 0.0034367644116743137,
+          "h2": 0.08782915598758918,
+          "ch4": 0.056095390567178174,
+          "co2": 0.5919325602524604,
+          "energy": 0.65,
+          "coke": 1.0,
+          "move": 0.0
+        },
+        "term_weighted": {
+          "ratio": 0.02749411529339451,
+          "h2": 0.0,
+          "ch4": 0.0,
+          "co2": 0.0,
+          "energy": 0.0,
+          "coke": 0.0,
+          "move": 0.0
+        }
+      },
+      "multi_objective": {
+        "conditions": {
+          "Reformer_Temperature_C": 775.0,
+          "Reformer_Pressure_bar": 5.0,
+          "Steam_to_Carbon_Ratio": 2.0
+        },
+        "objective": 3.030983164065167,
+        "syngas": {
+          "H2_molpercent": 44.581693970846466,
+          "CO_molpercent": 15.1197429276738,
+          "CO2_molpercent": 11.09182565420786,
+          "CH4_molpercent": 1.3112256912454716,
+          "H2O_molpercent": 27.795400195759672
+        },
+        "H2_CO_Ratio": 2.9485748655982897,
+        "term_raw": {
+          "ratio": 0.0321951056074438,
+          "h2": 0.10836612058307069,
+          "ch4": 0.26224513824909435,
+          "co2": 0.6932391033879912,
+          "energy": 0.40625,
+          "coke": 0.5,
+          "move": 0.0
+        },
+        "term_weighted": {
+          "ratio": 0.1287804224297752,
+          "h2": 0.32509836174921203,
+          "ch4": 0.5244902764981887,
+          "co2": 0.6932391033879912,
+          "energy": 0.609375,
+          "coke": 0.75,
+          "move": 0.0
+        }
+      }
+    },
+    "aromatic_rich": {
+      "BiooilID": 66,
+      "single_objective": {
+        "conditions": {
+          "Reformer_Temperature_C": 850.0,
+          "Reformer_Pressure_bar": 5.0,
+          "Steam_to_Carbon_Ratio": 2.0
+        },
+        "objective": 0.0004128227696111377,
+        "syngas": {
+          "H2_molpercent": 50.484904997394594,
+          "CO_molpercent": 20.04993306204815,
+          "CO2_molpercent": 7.69822607068484,
+          "CH4_molpercent": 0.5723034117187459,
+          "H2O_molpercent": 21.1945968954865
+        },
+        "H2_CO_Ratio": 2.517958780269236,
+        "term_raw": {
+          "ratio": 5.160284620139221e-05,
+          "h2": 0.0,
+          "ch4": 0.11446068234374918,
+          "co2": 0.4811391294178025,
+          "energy": 0.65,
+          "coke": 1.0,
+          "move": 0.0
+        },
+        "term_weighted": {
+          "ratio": 0.0004128227696111377,
+          "h2": 0.0,
+          "ch4": 0.0,
+          "co2": 0.0,
+          "energy": 0.0,
+          "coke": 0.0,
+          "move": 0.0
+        }
+      },
+      "multi_objective": {
+        "conditions": {
+          "Reformer_Temperature_C": 800.0,
+          "Reformer_Pressure_bar": 5.0,
+          "Steam_to_Carbon_Ratio": 2.0
+        },
+        "objective": 2.930489426696796,
+        "syngas": {
+          "H2_molpercent": 49.54985721419321,
+          "CO_molpercent": 18.569304782998312,
+          "CO2_molpercent": 8.763653689250761,
+          "CH4_molpercent": 1.5158963667516898,
+          "H2O_molpercent": 21.60123490484958
+        },
+        "H2_CO_Ratio": 2.6683743841374223,
+        "term_raw": {
+          "ratio": 0.004535989317385002,
+          "h2": 0.009002855716135799,
+          "ch4": 0.30317927335033795,
+          "co2": 0.5477283555781726,
+          "energy": 0.48750000000000004,
+          "coke": 0.6666666666666666,
+          "move": 0.0
+        },
+        "term_weighted": {
+          "ratio": 0.018143957269540007,
+          "h2": 0.027008567148407395,
+          "ch4": 0.6063585467006759,
+          "co2": 0.5477283555781726,
+          "energy": 0.7312500000000001,
+          "coke": 1.0,
+          "move": 0.0
+        }
+      }
+    },
+    "acid_rich": {
+      "BiooilID": 70,
+      "single_objective": {
+        "conditions": {
+          "Reformer_Temperature_C": 850.0,
+          "Reformer_Pressure_bar": 5.0,
+          "Steam_to_Carbon_Ratio": 2.0
+        },
+        "objective": 0.10497956943795227,
+        "syngas": {
+          "H2_molpercent": 39.780694057637405,
+          "CO_molpercent": 14.276821389647589,
+          "CO2_molpercent": 11.322857920617937,
+          "CH4_molpercent": 0.12249539478646998,
+          "H2O_molpercent": 34.49711461271293
+        },
+        "H2_CO_Ratio": 2.7863831151157488,
+        "term_raw": {
+          "ratio": 0.013122446179744033,
+          "h2": 0.2043861188472519,
+          "ch4": 0.024499078957293995,
+          "co2": 0.707678620038621,
+          "energy": 0.65,
+          "coke": 1.0,
+          "move": 0.0
+        },
+        "term_weighted": {
+          "ratio": 0.10497956943795227,
+          "h2": 0.0,
+          "ch4": 0.0,
+          "co2": 0.0,
+          "energy": 0.0,
+          "coke": 0.0,
+          "move": 0.0
+        }
+      },
+      "multi_objective": {
+        "conditions": {
+          "Reformer_Temperature_C": 775.0,
+          "Reformer_Pressure_bar": 5.0,
+          "Steam_to_Carbon_Ratio": 2.0
+        },
+        "objective": 3.3131972336272097,
+        "syngas": {
+          "H2_molpercent": 39.807193494475044,
+          "CO_molpercent": 12.561949557197728,
+          "CO2_molpercent": 12.786207792633196,
+          "CH4_molpercent": 0.6419688861574923,
+          "H2O_molpercent": 34.15791952337475
+        },
+        "H2_CO_Ratio": 3.1688706687781893,
+        "term_raw": {
+          "ratio": 0.07158207544828517,
+          "h2": 0.20385613011049913,
+          "ch4": 0.12839377723149845,
+          "co2": 0.7991379870395747,
+          "energy": 0.40625,
+          "coke": 0.5,
+          "move": 0.0
+        },
+        "term_weighted": {
+          "ratio": 0.28632830179314067,
+          "h2": 0.6115683903314975,
+          "ch4": 0.2567875544629969,
+          "co2": 0.7991379870395747,
+          "energy": 0.609375,
+          "coke": 0.75,
+          "move": 0.0
+        }
+      }
+    }
+  },
+  "closed_loop_composition_disturbance": [
+    {
+      "step": 0,
+      "measured_H2_CO": 5.9067215199498815,
+      "measured_H2": 31.429149321068444,
+      "measured_CO2": 11.189061803011814,
+      "measured_CH4": 1.463408526927032,
+      "applied_T": 750.0,
+      "applied_P": 15.0,
+      "applied_SC": 4.0,
+      "next_T": 775.0,
+      "next_P": 5.0,
+      "next_SC": 2.0,
+      "objective": 3.057792297812489,
+      "term_weighted": {
+        "ratio": 0.1248755760738243,
+        "h2": 0.3235752665068553,
+        "ch4": 0.5222726596116836,
+        "co2": 0.6922250456201255,
+        "energy": 0.609375,
+        "coke": 0.75,
+        "move": 0.03546875
+      }
+    },
+    {
+      "step": 1,
+      "measured_H2_CO": 2.94857486559829,
+      "measured_H2": 44.58169397084647,
+      "measured_CO2": 11.09182565420786,
+      "measured_CH4": 1.3112256912454716,
+      "applied_T": 775.0,
+      "applied_P": 5.0,
+      "applied_SC": 2.0,
+      "next_T": 775.0,
+      "next_P": 5.0,
+      "next_SC": 2.0,
+      "objective": 3.0255240316412606,
+      "term_weighted": {
+        "ratio": 0.12708406412902123,
+        "h2": 0.32238321877941156,
+        "ch4": 0.5252006508540671,
+        "co2": 0.6914810978787607,
+        "energy": 0.609375,
+        "coke": 0.75,
+        "move": 0.0
+      }
+    },
+    {
+      "step": 2,
+      "measured_H2_CO": 2.94857486559829,
+      "measured_H2": 44.58169397084647,
+      "measured_CO2": 11.09182565420786,
+      "measured_CH4": 1.3112256912454716,
+      "applied_T": 775.0,
+      "applied_P": 5.0,
+      "applied_SC": 2.0,
+      "next_T": 775.0,
+      "next_P": 5.0,
+      "next_SC": 2.0,
+      "objective": 3.02552403164126,
+      "term_weighted": {
+        "ratio": 0.127084064129022,
+        "h2": 0.3223832187794108,
+        "ch4": 0.5252006508540669,
+        "co2": 0.6914810978787607,
+        "energy": 0.609375,
+        "coke": 0.75,
+        "move": 0.0
+      }
+    },
+    {
+      "step": 3,
+      "measured_H2_CO": 2.9485748655982897,
+      "measured_H2": 44.581693970846466,
+      "measured_CO2": 11.09182565420786,
+      "measured_CH4": 1.3112256912454716,
+      "applied_T": 775.0,
+      "applied_P": 5.0,
+      "applied_SC": 2.0,
+      "next_T": 775.0,
+      "next_P": 5.0,
+      "next_SC": 2.0,
+      "objective": 3.02552403164126,
+      "term_weighted": {
+        "ratio": 0.12708406412902096,
+        "h2": 0.32238321877941156,
+        "ch4": 0.5252006508540672,
+        "co2": 0.6914810978787607,
+        "energy": 0.609375,
+        "coke": 0.75,
+        "move": 0.0
+      }
+    },
+    {
+      "step": 4,
+      "measured_H2_CO": 2.9485748655982906,
+      "measured_H2": 44.581693970846466,
+      "measured_CO2": 11.091825654207861,
+      "measured_CH4": 1.3112256912454714,
+      "applied_T": 775.0,
+      "applied_P": 5.0,
+      "applied_SC": 2.0,
+      "next_T": 775.0,
+      "next_P": 5.0,
+      "next_SC": 2.0,
+      "objective": 3.02552403164126,
+      "term_weighted": {
+        "ratio": 0.12708406412902148,
+        "h2": 0.3223832187794108,
+        "ch4": 0.5252006508540671,
+        "co2": 0.6914810978787608,
+        "energy": 0.609375,
+        "coke": 0.75,
+        "move": 0.0
+      }
+    },
+    {
+      "step": 5,
+      "measured_H2_CO": 2.981575461326997,
+      "measured_H2": 44.47088556666307,
+      "measured_CO2": 11.145947604280616,
+      "measured_CH4": 1.2631775368547165,
+      "applied_T": 775.0,
+      "applied_P": 5.0,
+      "applied_SC": 2.0,
+      "next_T": 775.0,
+      "next_P": 5.0,
+      "next_SC": 2.0,
+      "objective": 3.0260701166732664,
+      "term_weighted": {
+        "ratio": 0.13502088620366992,
+        "h2": 0.3263428408138958,
+        "ch4": 0.5102281316759821,
+        "co2": 0.6951032579797186,
+        "energy": 0.609375,
+        "coke": 0.75,
+        "move": 0.0
+      }
+    },
+    {
+      "step": 6,
+      "measured_H2_CO": 2.981575461326996,
+      "measured_H2": 44.47088556666307,
+      "measured_CO2": 11.145947604280614,
+      "measured_CH4": 1.2631775368547165,
+      "applied_T": 775.0,
+      "applied_P": 5.0,
+      "applied_SC": 2.0,
+      "next_T": 775.0,
+      "next_P": 5.0,
+      "next_SC": 2.0,
+      "objective": 3.0260701166732664,
+      "term_weighted": {
+        "ratio": 0.1350208862036697,
+        "h2": 0.3263428408138958,
+        "ch4": 0.5102281316759821,
+        "co2": 0.6951032579797186,
+        "energy": 0.609375,
+        "coke": 0.75,
+        "move": 0.0
+      }
+    },
+    {
+      "step": 7,
+      "measured_H2_CO": 2.9815754613269974,
+      "measured_H2": 44.470885566663085,
+      "measured_CO2": 11.145947604280616,
+      "measured_CH4": 1.2631775368547167,
+      "applied_T": 775.0,
+      "applied_P": 5.0,
+      "applied_SC": 2.0,
+      "next_T": 775.0,
+      "next_P": 5.0,
+      "next_SC": 2.0,
+      "objective": 3.0260701166732664,
+      "term_weighted": {
+        "ratio": 0.13502088620366945,
+        "h2": 0.32634284081389625,
+        "ch4": 0.5102281316759821,
+        "co2": 0.6951032579797185,
+        "energy": 0.609375,
+        "coke": 0.75,
+        "move": 0.0
+      }
+    },
+    {
+      "step": 8,
+      "measured_H2_CO": 2.981575461326997,
+      "measured_H2": 44.470885566663085,
+      "measured_CO2": 11.145947604280614,
+      "measured_CH4": 1.2631775368547165,
+      "applied_T": 775.0,
+      "applied_P": 5.0,
+      "applied_SC": 2.0,
+      "next_T": 775.0,
+      "next_P": 5.0,
+      "next_SC": 2.0,
+      "objective": 3.0260701166732664,
+      "term_weighted": {
+        "ratio": 0.13502088620366992,
+        "h2": 0.3263428408138958,
+        "ch4": 0.5102281316759821,
+        "co2": 0.6951032579797185,
+        "energy": 0.609375,
+        "coke": 0.75,
+        "move": 0.0
+      }
+    },
+    {
+      "step": 9,
+      "measured_H2_CO": 2.9815754613269956,
+      "measured_H2": 44.470885566663064,
+      "measured_CO2": 11.145947604280616,
+      "measured_CH4": 1.2631775368547162,
+      "applied_T": 775.0,
+      "applied_P": 5.0,
+      "applied_SC": 2.0,
+      "next_T": 775.0,
+      "next_P": 5.0,
+      "next_SC": 2.0,
+      "objective": 3.0260701166732664,
+      "term_weighted": {
+        "ratio": 0.13502088620366992,
+        "h2": 0.3263428408138958,
+        "ch4": 0.5102281316759821,
+        "co2": 0.6951032579797186,
+        "energy": 0.609375,
+        "coke": 0.75,
+        "move": 0.0
+      }
+    }
+  ]
+}

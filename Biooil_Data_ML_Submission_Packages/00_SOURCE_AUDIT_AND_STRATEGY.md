@@ -4,7 +4,7 @@ Date: 31 May 2026
 
 Working title family:
 
-Data availability constraints and deep learning-based inverse prediction of bio-oil composition from steam reforming syngas
+Machine-learning soft sensor for bio-oil steam reforming: Cantera-generated data and inverse prediction of bio-oil composition from syngas
 
 ## Submission order
 
@@ -14,13 +14,13 @@ Data availability constraints and deep learning-based inverse prediction of bio-
 
 ## Why the two publication lines should be combined
 
-The composition-data review alone is currently not strong enough as a standalone database or data article. The SQL dataset is useful, but it is incomplete, class-level, and not a raw GC-MS or compound-level repository. The reverse machine-learning work is stronger as an original research contribution, but it needs a defensible explanation of why the input data are limited and why data stewardship matters.
+The composition-data work should not be presented as the main publication story. The SQL dataset is useful because it provides literature-derived bio-oil compositions that can be converted into Cantera feed definitions. The reverse machine-learning work is the main original contribution because it develops a syngas-based soft sensor for future bio-oil reforming monitoring and MPC.
 
 The combined article should therefore be framed as:
 
-> A data-curated, thermodynamically validated inverse modeling study that uses the documented scarcity and inconsistency of reusable bio-oil composition data as motivation for a syngas-based soft sensor.
+> A Cantera-to-machine-learning soft-sensor study that uses literature-derived bio-oil compositions to generate synthetic reforming data and predict bio-oil composition from syngas for future MPC use.
 
-The review/data-availability part becomes the problem framing and data-quality analysis. The reverse ML part becomes the main original contribution.
+The literature bio-oil database becomes the feed-composition source for synthetic data generation. The Cantera simulation, inverse MLP model, and MPC relevance become the main publication story.
 
 ## Sources used
 
@@ -32,8 +32,8 @@ Primary local sources:
 - `reverse_ml_biooil_to_product/ml_reverse_prediction/ML_WORK_SUMMARY.md`: used for data cleaning, 1,350 clean samples, model split, and feature statistics.
 - `reverse_ml_biooil_to_product/optimization_control_mpc/results/metrics/biooil_id_holdout_metrics.json`: used for group-holdout generalization audit.
 - `reverse_ml_biooil_to_product/optimization_control_mpc/TIK5_REPORT_DRAFT.md`: used only as a supporting source for BiooilID holdout and MPC/soft-sensor integration.
-- `COMPOSITION_DATA_REVIEW_Paper/CALISMA_DURUMU_SQL_UYUMLULUK_VE_SUBMISSION_CHECKLIST.md`: used for SQL data audit and submission requirements.
-- `SystematicLiteratureReview.docx`: used as a narrative source for bio-oil composition reporting and data stewardship framing.
+- `COMPOSITION_DATA_REVIEW_Paper/CALISMA_DURUMU_SQL_UYUMLULUK_VE_SUBMISSION_CHECKLIST.md`: used for SQL data audit, source limitations, and submission requirements.
+- `SystematicLiteratureReview.docx`: used only as background context for bio-oil composition reporting; it is not the main manuscript frame.
 
 Official journal sources checked:
 
@@ -43,7 +43,7 @@ Official journal sources checked:
 
 ## Local evidence base
 
-SQL data audit:
+Bio-oil composition source data:
 
 - `Biooil`: 70 class-level composition records.
 - `Reference`: 19 total references; `Biooil` records linked to 14 distinct references.
@@ -74,7 +74,7 @@ Simulation and ML evidence:
 
 The safe manuscript claim is:
 
-> Literature-derived bio-oil composition data are sufficiently informative to train a thermodynamically constrained inverse soft sensor within the represented data domain, but incomplete reporting and limited composition diversity impose clear generalization limits for unseen bio-oils.
+> Literature-derived bio-oil compositions can be converted into simulation-ready surrogate feeds, Cantera can generate a thermodynamically consistent reforming dataset, and an MLP can operate as a syngas-based soft sensor for estimating bio-oil composition within the represented domain.
 
 ## Claims to avoid
 
@@ -95,4 +95,3 @@ These are the only items that cannot be completed without author confirmation:
 - Funding statement.
 - Repository DOI or private/shared data location.
 - Final manual graphical abstract image. Elsevier policies do not allow generative AI-created graphical abstracts or figures; the prepared brief must be redrawn manually by the author/designer.
-

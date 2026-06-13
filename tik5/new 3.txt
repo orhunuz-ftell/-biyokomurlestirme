@@ -1,0 +1,79 @@
+ J = 4.0·(H2/CO sapma)² + 3.0·(H2 açığı) + 2.0·(CH4) + 1.0·(CO2)
+      + 1.5·(enerji) + 1.5·(koklaşma riski) bunu anlamam lazım. her bir terim ne demek
+
+● Her terimi tek tek, koddaki gerçek formülüyle ve balanced biyoyağın çok-amaçlı optimumundan (T=775, P=5, S/C=2 → H2/CO=2.95, H2=44.58, CO2=11.09, CH4=1.31) alınmış somut sayılarla açıklayayım. Böylece
+  JSON'daki term_weighted değerleriyle birebir oturur.
+
+  Genel mantık: J bir "ceza" toplamı, optimizer onu en küçük yapan T/P/S/C'yi seçer. Her terim ~[0,1] aralığına normalize edildi ki ağırlıklar adil kıyaslansın. Önündeki katsayı (4.0, 3.0…) o amacın ne kadar
+  önemsendiği.
+
+  ---
+  1) 4.0·(H2/CO sapma)² — hedef orandan sapma
+
+  Formül: ((H2/CO − 2.5) / 2.5)²
+  Anlamı: Üretilen sentez gazının H2/CO oranının hedeften (2.5) ne kadar uzak olduğu. Karesi alınır → hem yukarı hem aşağı sapma cezalanır, büyük sapma orantısız cezalanır. 2.5'e bölme → göreli sapma
+  (birimsiz).
+  Neden: H2/CO downstream kullanımı belirler (Fischer-Tropsch ≈2, metanol ≈2). Yanlış oran = beslenen sentez aşamasıyla uyumsuzluk.
+  Sayı: ((2.9486−2.5)/2.5)² = (0.179)² = 0.032 → ×4.0 = 0.129.
+  İttiği yön: Oranı 2.5'e getiren T/P/S/C. En yüksek ağırlık (4.0) çünkü ana kontrol hedefi.
+
+  2) 3.0·(H2 açığı) — hidrojen verimi
+
+  Formül: max(0, 50 − H2mol%) / 50
+  Anlamı: H2 mol%'ün arzu edilen tavandan (50) ne kadar eksik olduğu. max(0,…) → 50'yi geçerse ceza yok (fazla H2 iyi). 50'ye bölme → normalize.
+  Neden: H2 ana ürün (hidrojen ekonomisi / FT beslemesi). Daha çok H2 = daha değerli sentez gazı.
+  Sayı: (50−44.58)/50 = 5.42/50 = 0.108 → ×3.0 = 0.325.
+  İttiği yön: H2'yi artıran koşullar → yüksek T, yüksek S/C (buhar reformingi daha çok H2 verir).
+
+  3) 2.0·(CH4) — metan kayması = dönüşüm verimsizliği
+
+  Formül: CH4mol% / 5
+  Anlamı: Çıkıştaki metan oranı. Yüksek CH4 = eksik reforming; metan parçalanmadan kaçmış, içindeki karbon ve hidrojen sentez gazına dönüşmemiş.
+  Neden: CH4 kayması doğrudan karbon dönüşüm verimini düşürür — kayıp hammadde.
+  Sayı: 1.311/5 = 0.262 → ×2.0 = 0.524.
+  İttiği yön: CH4'ü azaltan koşullar → yüksek T (yüksek sıcaklık metan reformingini tamamlar).
+
+  4) 1.0·(CO2) — karbondioksit
+
+  Formül: CO2mol% / 16
+  Anlamı: Çıkıştaki CO2 oranı (16 referans, mevcut koddaki max_co2 ile uyumlu).
+  Neden: CO2 iki açıdan kötü: (a) sentez gazını seyreltir (değerli H2/CO'yu azaltır), (b) çevresel maliyet. Not: su-gaz kaydırma (WGS) dengesi gereği CO2'yi azaltmak çoğu zaman H2'yi de azaltır → terimler
+  çelişir, optimizasyonun özü budur.
+  Sayı: 11.09/16 = 0.693 → ×1.0 = 0.693. (En düşük ağırlık ama ham değeri yüksek olduğu için katkısı büyük.)
+  İttiği yön: Genelde düşük T / WGS dengesini CO lehine kaydıran koşullar.
+
+  5) 1.5·(enerji) — işletme/enerji maliyeti
+
+  Formül: 0.65·(T−650)/200 + 0.20·(S/C−2)/4 + 0.15·(P−5)/25
+  Anlamı: Sadece işletme koşullarının maliyeti (sentez gazına bakmaz). Ağırlıklı pay: en çok sıcaklık (0.65) — ısıtma pahalı; sonra buhar (S/C, 0.20) — buharlaştırma enerjisi; sonra basınç (0.15) — kompresör.
+  Neden: Yüksek T ve yüksek S/C verimi artırır ama enerjiyi de yakar. Bu terim "ne pahasına?" diye sorar.
+  Sayı: T=775 → 0.65·(125/200)=0.406; S/C=2 ve P=5 → 0 katkı; toplam = 0.406 → ×1.5 = 0.609.
+  İttiği yön: Düşük T, düşük S/C, düşük P. (1, 2, 3'e doğrudan karşı çeker — gerçek ödünleşim.)
+
+  6) 1.5·(koklaşma riski) — katalizör ömrü
+
+  Formül: clip((T−700)/150, 0,1) × clip((4−S/C)/2, 0,1)
+  Anlamı: İki riskin çarpımı: yüksek sıcaklık ve düşük buhar (S/C) bir aradayken katalizör yüzeyinde karbon (kok) birikir. Çarpım olduğu için ikisi birden kötüyse risk patlar; biri iyiyse risk söner.
+  Neden: Reforming'de en gerçek pratik kısıt — koklaşma katalizörü öldürür, prosesi durdurur. Düşük S/C ucuzdur ama koklaşma riskini büyütür.
+  Sayı: T=775 → (75/150)=0.5; S/C=2 → (2/2)=1.0; çarpım = 0.5×1.0 = 0.5 → ×1.5 = 0.75.
+  İttiği yön: Düşük T, yüksek S/C. (Enerji terimiyle bile çelişir: enerji düşük S/C ister, koklaşma yüksek S/C ister.)
+
+  ---
+  Çelişkiler haritası (optimizasyonun özü)
+
+  ┌───────────────┬────────────────┬──────────────────┬───────────────┬─────────────────┐
+  │               │ Yüksek T ister │ Yüksek S/C ister │ Düşük T ister │ Düşük S/C ister │
+  ├───────────────┼────────────────┼──────────────────┼───────────────┼─────────────────┤
+  │ H2 verimi (2) │ ✓              │ ✓                │               │                 │
+  ├───────────────┼────────────────┼──────────────────┼───────────────┼─────────────────┤
+  │ CH4 azalt (3) │ ✓              │                  │               │                 │
+  ├───────────────┼────────────────┼──────────────────┼───────────────┼─────────────────┤
+  │ Enerji (5)    │                │                  │ ✓             │ ✓               │
+  ├───────────────┼────────────────┼──────────────────┼───────────────┼─────────────────┤
+  │ Koklaşma (6)  │                │ ✓                │ ✓             │                 │
+  └───────────────┴────────────────┴──────────────────┴───────────────┴─────────────────┘
+
+  Görüldüğü gibi tek bir T/P/S/C herkesi memnun edemez — örneğin enerji düşük S/C, koklaşma yüksek S/C istiyor. Optimizer bu çekişmenin ağırlıklı dengesini bulur. İşte tek-amaçlının (sadece oran) en sıcak
+  köşeye kaçmasının, çok-amaçlının ise T=775'e "ortalanmasının" sebebi bu denge.
+
+  İstersen ağırlıkları değiştirip (ör. w_coke'u 1.5→3.0) optimumun nasıl kaydığını canlı gösterebilirim — hangi terim baskınsa optimum o terimin istediği yöne kayar.

@@ -6,11 +6,11 @@ Target journal: Energy and AI
 
 ## Title
 
-AI-enabled inverse prediction of bio-oil composition from steam reforming syngas under data availability constraints
+AI-enabled soft sensor for bio-oil steam reforming using Cantera-generated data and inverse syngas-to-composition prediction
 
 ## Running title
 
-AI inverse prediction of bio-oil composition
+AI soft sensor for bio-oil reforming
 
 ## Authors
 
@@ -36,7 +36,7 @@ Phone: [phone number]
 
 ## Acknowledgements
 
-The authors thank [names/institutions to be confirmed] for supervision, technical discussions, and support during the SQL database, Cantera simulation, and machine-learning workflow development.
+The authors thank [names/institutions to be confirmed] for supervision, technical discussions, and support during the bio-oil composition database, Cantera simulation, machine-learning workflow, and soft-sensor/MPC framework development.
 
 ## Declaration of Competing Interest
 
@@ -61,4 +61,3 @@ Orhun Uzdiyem: Conceptualization, Data curation, Methodology, Software, Formal a
 ## Declaration of generative AI and AI-assisted technologies
 
 During preparation of the submission package, AI-assisted tools were used to organize source notes, draft editorial text, and prepare journal-specific submission materials. The authors reviewed, verified, and edited the content and take full responsibility for the final manuscript.
-

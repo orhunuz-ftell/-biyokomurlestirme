@@ -1,0 +1,102 @@
+{
+  "step1_objective": {
+    "weights": {
+      "ratio": 4.0,
+      "h2": 3.0,
+      "ch4": 2.0,
+      "co2": 1.0,
+      "energy": 1.5,
+      "coke": 8.0
+    },
+    "target_h2_co": 2.5,
+    "coking_term": "w_coke * phi(komp) * coke_shape(T,S/C), phi=(aromatik+fenol)/100"
+  },
+  "biooil_start": {
+    "BiooilID": 69,
+    "composition": {
+      "Aromatics": 0.0,
+      "Acids": 9.0,
+      "Alcohols": 78.0,
+      "Furans": 0.0,
+      "Phenols": 0.0,
+      "Aldehydes_Ketones": 13.0
+    },
+    "phi_coke": 0.0
+  },
+  "step2_optimum_before": {
+    "conditions": {
+      "Reformer_Temperature_C": 850.0,
+      "Reformer_Pressure_bar": 5.0,
+      "Steam_to_Carbon_Ratio": 2.0
+    },
+    "H2_CO": 3.305,
+    "objective": 2.006,
+    "coke_term": 0.0,
+    "term_weighted": {
+      "ratio": 0.414,
+      "h2": 0.017,
+      "ch4": 0.127,
+      "co2": 0.473,
+      "energy": 0.975,
+      "coke": 0.0
+    }
+  },
+  "step3_disturbance": {
+    "disturbed_composition": {
+      "Aromatics": 10.0,
+      "Acids": 6.0,
+      "Alcohols": 52.0,
+      "Furans": 0.0,
+      "Phenols": 23.33,
+      "Aldehydes_Ketones": 8.67
+    },
+    "phi_before": 0.0,
+    "phi_after": 0.333,
+    "at_old_optimum": {
+      "conditions": {
+        "Reformer_Temperature_C": 850.0,
+        "Reformer_Pressure_bar": 5.0,
+        "Steam_to_Carbon_Ratio": 2.0
+      },
+      "H2_CO": 2.972,
+      "objective_jumped_to": 4.532,
+      "coke_term_jumped_to": 2.667
+    },
+    "objective_increase": 2.525
+  },
+  "step4_reoptimized": {
+    "conditions": {
+      "Reformer_Temperature_C": 775.0,
+      "Reformer_Pressure_bar": 5.0,
+      "Steam_to_Carbon_Ratio": 2.0
+    },
+    "H2_CO": 3.295,
+    "objective": 3.75,
+    "coke_term": 1.333,
+    "term_weighted": {
+      "ratio": 0.404,
+      "h2": 0.178,
+      "ch4": 0.607,
+      "co2": 0.618,
+      "energy": 0.609,
+      "coke": 1.333
+    }
+  },
+  "optimum_shift": {
+    "Reformer_Temperature_C": [
+      850.0,
+      775.0,
+      true
+    ],
+    "Reformer_Pressure_bar": [
+      5.0,
+      5.0,
+      false
+    ],
+    "Steam_to_Carbon_Ratio": [
+      2.0,
+      2.0,
+      false
+    ]
+  }
+}

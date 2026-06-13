@@ -1,8 +1,8 @@
-# Fuel-processing soft sensor for bio-oil steam reforming: data-curated inverse prediction from syngas
+# Fuel-processing soft sensor for bio-oil steam reforming using Cantera-generated syngas data
 
 ## Abstract
 
-Bio-oil steam reforming can produce hydrogen-rich syngas, but fuel-processing decisions depend on liquid bio-oil composition, which is slower to measure than gas-phase products. This study evaluates whether reformer syngas and operating conditions can be used as a soft-sensor input for class-level bio-oil composition. A literature-derived SQL database was audited, showing that only 30 of 70 class-level records contained the six target groups needed for modeling. These compositions were represented using surrogate compounds and simulated in a Cantera reformer workflow across temperature, pressure, and steam-to-carbon conditions. The broader simulation set contained 3,150 thermodynamic cases; 1,350 complete samples were used for machine learning. A multilayer perceptron predicted aromatics, acids, alcohols, furans, phenols, and aldehydes/ketones from eight inputs with row-wise test R2 = 0.863 and MAE = 4.03%, outperforming linear, tree-based, and ensemble alternatives. A BiooilID holdout audit showed that transfer to unseen bio-oil identities is uneven, especially for alcohols. The workflow supports soft-sensor monitoring for represented bio-oil domains while showing that broader fuel-processing deployment requires more diverse composition data and group-aware validation.
+Bio-oil steam reforming can produce hydrogen-rich syngas, but fuel-processing decisions depend on liquid bio-oil composition, which is slower to measure than gas-phase products. This study develops a soft sensor that estimates class-level bio-oil composition from reformer syngas and operating conditions. Literature-derived bio-oil compositions were mapped into six target groups and represented using surrogate compounds for Cantera steam reforming simulations. The broader simulation set contained 3,150 thermodynamic cases; 1,350 complete samples were used for machine learning. A multilayer perceptron predicted aromatics, acids, alcohols, furans, phenols, and aldehydes/ketones from eight inputs with row-wise test R2 = 0.863 and MAE = 4.03%, outperforming linear, tree-based, and ensemble alternatives. The workflow supports soft-sensor monitoring and future MPC for represented bio-oil domains. A BiooilID holdout audit showed that transfer to unseen bio-oil identities is component-dependent, especially for alcohols.
 
 ## Keywords
 
@@ -14,7 +14,7 @@ Bio-oil produced from biomass pyrolysis is a renewable intermediate for fuel and
 
 For fuel-processing applications, online syngas monitoring is more practical than frequent detailed liquid characterization. This creates an opportunity for a soft sensor that infers bio-oil composition from reformer output. Such a tool would support feedstock quality tracking, process adjustment, and screening of bio-oil blends. The challenge is that inverse thermodynamic prediction is not unique, and the available literature-derived composition data are incomplete.
 
-This study combines data curation, thermodynamic simulation, and machine learning to evaluate a syngas-based bio-oil soft sensor. The manuscript focuses on fuel-processing utility while explicitly reporting the data constraints that limit deployment.
+This study combines literature-based feed definition, thermodynamic simulation, and machine learning to evaluate a syngas-based bio-oil soft sensor. The manuscript focuses on fuel-processing utility and future MPC support.
 
 ## 2. Data and fuel representation
 
@@ -38,13 +38,13 @@ Tree-based models were weaker: random forest reached R2 = 0.571 and XGBoost reac
 
 ## 5. Generalization and fuel-processing interpretation
 
-The row-wise test result supports use as an interpolation soft sensor inside the represented fuel-composition space. However, a BiooilID holdout audit showed that fully unseen bio-oil identities are more difficult. Aromatics and acids transferred well, while alcohols failed under the holdout setting. This difference is important for fuel-processing deployment because a plant may encounter feedstocks outside the training composition domain.
+The row-wise test result supports use as an interpolation soft sensor inside the represented fuel-composition space. However, a BiooilID holdout audit showed that fully unseen bio-oil identities are more difficult. Aromatics and acids transferred well, while alcohol prediction was not reliable under the holdout setting. This difference is important for fuel-processing deployment because a plant may encounter feedstocks outside the training composition domain.
 
 The practical conclusion is that the model can support monitoring and decision support when the feedstock resembles curated training compositions. For new feedstock families, the soft sensor should be used with uncertainty flags and updated with additional characterization data.
 
 ## 6. Conclusions
 
-A data-curated inverse soft sensor was developed for bio-oil steam reforming. SQL analysis showed that reusable bio-oil composition data are incomplete, with only 30 of 70 class-level records usable for six-target inverse modeling. Cantera generated a thermodynamic reformer dataset, and a multilayer perceptron predicted six bio-oil classes from syngas and process conditions with row-wise R2 = 0.863 and MAE = 4.03%. Group-holdout analysis showed that generalization to unseen bio-oils is component-dependent. The approach is promising for fuel-processing monitoring, but deployment requires broader source diversity, uncertainty estimation, and experimental validation.
+A fuel-processing soft sensor was developed for bio-oil steam reforming. Literature-derived bio-oil compositions were converted into six surrogate feed classes, Cantera generated a thermodynamic reformer dataset, and a multilayer perceptron predicted six bio-oil classes from syngas and process conditions with row-wise R2 = 0.863 and MAE = 4.03%. Group-holdout analysis showed that generalization to unseen bio-oils is component-dependent. The approach is promising for fuel-processing monitoring and future MPC, but deployment requires uncertainty estimation and experimental validation.
 
 ## Data availability
 

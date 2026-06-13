@@ -1,0 +1,82 @@
+  Tamam, basit ve odaklı anlatayım. Önce koklaşma, sonra amaç fonksiyonundaki tek satırlık değişiklik.
+
+  1) Koklaşma nedir?
+
+  Reformerde istediğimiz: biyoyağ + buhar → sentez gazı (H₂, CO…). Ama bazı karbon atomları gaza dönüşmek yerine katalizör yüzeyinde katı karbon (kok/is) olarak birikir. Bu katı tabaka katalizörü kaplar, aktif
+  yüzeyini tıkar → katalizör ölür, reformer durur, temizlik/değişim gerekir. Yani koklaşma = katalizörü öldüren katı karbon birikimi.
+
+  Neyin etkilediği iki şey:
+
+  a) Kompozisyon — "kim kok yapar":
+  Aromatik halkalı moleküller (aromatikler, fenoller) kolayca katı karbona dönüşür; halka yapısı reform olmak yerine birleşip kömürleşir. Aromatik + fenol = kok öncülü. Asit, alkol gibi küçük oksijenli
+  moleküller daha az kok yapar.
+
+  b) Koşullar — "ne zaman kok yapar":
+  - Yüksek sıcaklık: molekülleri parçalar, açığa çıkan karbon yüzeyde kalır.
+  - Düşük buhar (S/C): buhar aslında karbonu temizler (C + H₂O → CO + H₂). Buhar az olunca temizlenmeyen karbon birikir.
+  - Yani yüksek T + düşük S/C = en çok kok.
+
+  Kritik nokta: Senin veri setin Cantera denge hesabıyla (gaz-fazı, GRI-Mech) üretildi — orada katı karbon yok. Yani koklaşma gerçek bir olay ama modelin hiç görmediği bir olay. Bu yüzden onu dışarıdan eklemek
+  dürüst.
+
+  2) Amaç fonksiyonunu nasıl değiştiriyoruz?
+
+  Şu anki koklaşma terimi sadece T ve S/C'ye bakıyor (kompozisyona değil):
+
+  def coking_risk(t, sc):
+      t_term  = clip((t - 700)/150, 0, 1)   # yüksek T → 1'e gider
+      sc_term = clip((4 - sc)/2,    0, 1)   # düşük S/C → 1'e gider
+      return t_term * sc_term               # ikisi birden kötüyse risk büyük
+
+  Tek değişiklik: bunu kok öncül fraksiyonuyla çarpıyoruz (aromatik + fenol):
+
+  def coking_risk(t, sc, biooil):
+      phi = (biooil["Aromatics_pct"] + biooil["Phenols_pct"]) / 100   # ← YENİ: kompozisyon
+      t_term  = clip((t - 700)/150, 0, 1)
+      sc_term = clip((4 - sc)/2,    0, 1)
+      return phi * t_term * sc_term          # risk artık kompozisyona da bağlı
+
+  Olan şey bu kadar: koklaşma cezasının gücü artık beslemeye bağlı.
+
+  Neden optimum kayar (basit sezgi):
+
+  ┌────────────────────┬──────────────┬─────────────────┬─────────────────────────────────────────────────┐
+  │      Besleme       │  φ (öncül)   │ Koklaşma cezası │               Optimizer ne yapar                │
+  ├────────────────────┼──────────────┼─────────────────┼─────────────────────────────────────────────────┤
+  │ Az aromatik/fenol  │ düşük (0.1)  │ zayıf           │ T'yi yüksek, S/C'yi düşük tutar (verim için)    │
+  ├────────────────────┼──────────────┼─────────────────┼─────────────────────────────────────────────────┤
+  │ Çok aromatik/fenol │ yüksek (0.6) │ güçlü           │ T'yi düşürür / S/C'yi yükseltir (kok'tan kaçar) │
+  └────────────────────┴──────────────┴─────────────────┴─────────────────────────────────────────────────┘
+
+  Yani kompozisyon değişince koklaşma cezası değişir, ceza değişince optimum T/S-C değişir. İstediğin "biyoyağ değişti → optimum koşul değişti" davranışı buradan doğar — hem de fiziksel sebeple (aromatik
+  besleme gerçekten daha çok buhar ve daha düşük sıcaklık ister).
+
+  ---
+  Özet: koklaşma = katalizörü öldüren katı karbon; aromatik/fenol + sıcak + az buhar onu artırır; modelde yok; amaca tek çarpan (φ) ekleyerek optimumu kompozisyona duyarlı yapıyoruz.
+
+  İstersen bu tek satırlık değişikliği kurup, aromatik/fenolce zenginleşen bir bozucuyla koşayım — optimum T ve S/C'nin gerçekten kaydığını sayılarla göster.
+ Somut sayılarla 4 adım
+
+  1 — Amaç fonksiyonu (koklaşma artık kompozisyona bağlı):
+  J = 4·(H2/CO sapma)² + 3·(H2 açığı) + 2·CH4 + 1·CO2 + 1.5·enerji + 8·[φ·koklaşma_şekli(T,S/C)]
+  φ = (aromatik+fenol)/100 → kok öncül fraksiyonu.
+
+  2 — Optimum belirlendi: Başlangıç biyoyağı alkolce zengin (alkol %78, aromatik/fenol %0 → φ=0):
+  T=850 °C, P=5 bar, S/C=2.0, H2/CO=3.305, koklaşma terimi=0 → kok öncülü yok, en sıcak noktada çalışıyor.
+
+  3 — Bozucu uygulandı (aromatik+15, fenol+35 → besleme kok-öncüllü): φ 0 → 0.333. Eski optimum koşulda (850/5/2):
+  - Koklaşma terimi: 0 → 2.667
+  - Amaç J: 2.006 → 4.532 (+2.525)
+
+  Yani eski sıcak nokta artık yüksek-kok rejimi — optimumdan uzaklaşıldı.
+
+  4 — Tekrar optimize edildi: Yeni optimum T = 850 → 775 °C (−75 °C), P=5, S/C=2. Koklaşma terimi 2.667 → 1.333'e yarılandı, J 4.532 → 3.750.
+
+  Neden işe yaradı (kısa)
+
+  Sıcaklığı düşürmek, kok öncülü artan beslemede koklaşma cezasını yarıya indiriyor → optimizer soğuyor. S/C 2'de kaldı çünkü bu beslemede H2/CO zaten hedefin üstünde, S/C'yi artırmak oranı bozar (ratio cezası
+  direniyor). Yani T, koklaşmadan kaçışın kullanılabilir kaldıracı oldu.
+
+  Bunu sağlayan tek şey: dengenin (Cantera/GRI-Mech gaz-fazı) hiç görmediği ama fiziksel olarak gerçek olan koklaşmayı, amaca kompozisyona bağlı bir terim olarak eklemek.
+
+  İstersen T ve S/C'nin birlikte kaydığı bir varyant da kurabilirim (hedef H2/CO=2.0 olan bir beslemeyle; orada S/C artışı hem oranı hem koklaşmayı iyileştirir).

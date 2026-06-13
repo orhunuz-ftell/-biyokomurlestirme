@@ -1,0 +1,738 @@
+{
+  "biooil": "balanced",
+  "BiooilID": 60,
+  "target_h2_co": 2.5,
+  "base_weights": {
+    "ratio": 4.0,
+    "h2": 3.0,
+    "ch4": 2.0,
+    "co2": 1.0,
+    "energy": 1.5,
+    "coke": 1.5,
+    "move": 0.0
+  },
+  "single_weight_sweep": {
+    "ratio": [
+      {
+        "multiplier": 0.0,
+        "weight_value": 0.0,
+        "T": 750.0,
+        "P": 5.0,
+        "SC": 4.0,
+        "H2_CO": 5.646,
+        "H2": 34.2,
+        "CO2": 11.19,
+        "CH4": 0.248,
+        "objective": 2.384,
+        "term_weighted": {
+          "ratio": 0.0,
+          "h2": 0.948,
+          "ch4": 0.099,
+          "co2": 0.699,
+          "energy": 0.638,
+          "coke": 0.0
+        }
+      },
+      {
+        "multiplier": 0.5,
+        "weight_value": 2.0,
+        "T": 775.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.949,
+        "H2": 44.58,
+        "CO2": 11.09,
+        "CH4": 1.311,
+        "objective": 2.967,
+        "term_weighted": {
+          "ratio": 0.064,
+          "h2": 0.325,
+          "ch4": 0.524,
+          "co2": 0.693,
+          "energy": 0.609,
+          "coke": 0.75
+        }
+      },
+      {
+        "multiplier": 1.0,
+        "weight_value": 4.0,
+        "T": 775.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.949,
+        "H2": 44.58,
+        "CO2": 11.09,
+        "CH4": 1.311,
+        "objective": 3.031,
+        "term_weighted": {
+          "ratio": 0.129,
+          "h2": 0.325,
+          "ch4": 0.524,
+          "co2": 0.693,
+          "energy": 0.609,
+          "coke": 0.75
+        }
+      },
+      {
+        "multiplier": 2.0,
+        "weight_value": 8.0,
+        "T": 800.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.819,
+        "H2": 45.28,
+        "CO2": 10.39,
+        "CH4": 0.793,
+        "objective": 3.112,
+        "term_weighted": {
+          "ratio": 0.13,
+          "h2": 0.283,
+          "ch4": 0.317,
+          "co2": 0.65,
+          "energy": 0.731,
+          "coke": 1.0
+        }
+      },
+      {
+        "multiplier": 4.0,
+        "weight_value": 16.0,
+        "T": 800.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.819,
+        "H2": 45.28,
+        "CO2": 10.39,
+        "CH4": 0.793,
+        "objective": 3.242,
+        "term_weighted": {
+          "ratio": 0.261,
+          "h2": 0.283,
+          "ch4": 0.317,
+          "co2": 0.65,
+          "energy": 0.731,
+          "coke": 1.0
+        }
+      }
+    ],
+    "h2": [
+      {
+        "multiplier": 0.0,
+        "weight_value": 0.0,
+        "T": 800.0,
+        "P": 5.0,
+        "SC": 3.0,
+        "H2_CO": 3.391,
+        "H2": 39.48,
+        "CO2": 10.44,
+        "CH4": 0.455,
+        "objective": 2.648,
+        "term_weighted": {
+          "ratio": 0.508,
+          "h2": 0.0,
+          "ch4": 0.182,
+          "co2": 0.652,
+          "energy": 0.806,
+          "coke": 0.5
+        }
+      },
+      {
+        "multiplier": 0.5,
+        "weight_value": 1.5,
+        "T": 775.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.949,
+        "H2": 44.58,
+        "CO2": 11.09,
+        "CH4": 1.311,
+        "objective": 2.868,
+        "term_weighted": {
+          "ratio": 0.129,
+          "h2": 0.163,
+          "ch4": 0.524,
+          "co2": 0.693,
+          "energy": 0.609,
+          "coke": 0.75
+        }
+      },
+      {
+        "multiplier": 1.0,
+        "weight_value": 3.0,
+        "T": 775.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.949,
+        "H2": 44.58,
+        "CO2": 11.09,
+        "CH4": 1.311,
+        "objective": 3.031,
+        "term_weighted": {
+          "ratio": 0.129,
+          "h2": 0.325,
+          "ch4": 0.524,
+          "co2": 0.693,
+          "energy": 0.609,
+          "coke": 0.75
+        }
+      },
+      {
+        "multiplier": 2.0,
+        "weight_value": 6.0,
+        "T": 800.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.819,
+        "H2": 45.28,
+        "CO2": 10.39,
+        "CH4": 0.793,
+        "objective": 3.33,
+        "term_weighted": {
+          "ratio": 0.065,
+          "h2": 0.567,
+          "ch4": 0.317,
+          "co2": 0.65,
+          "energy": 0.731,
+          "coke": 1.0
+        }
+      },
+      {
+        "multiplier": 4.0,
+        "weight_value": 12.0,
+        "T": 800.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.819,
+        "H2": 45.28,
+        "CO2": 10.39,
+        "CH4": 0.793,
+        "objective": 3.897,
+        "term_weighted": {
+          "ratio": 0.065,
+          "h2": 1.133,
+          "ch4": 0.317,
+          "co2": 0.65,
+          "energy": 0.731,
+          "coke": 1.0
+        }
+      }
+    ],
+    "ch4": [
+      {
+        "multiplier": 0.0,
+        "weight_value": 0.0,
+        "T": 725.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 3.286,
+        "H2": 41.76,
+        "CO2": 12.69,
+        "CH4": 3.365,
+        "objective": 2.299,
+        "term_weighted": {
+          "ratio": 0.396,
+          "h2": 0.494,
+          "ch4": 0.0,
+          "co2": 0.793,
+          "energy": 0.366,
+          "coke": 0.25
+        }
+      },
+      {
+        "multiplier": 0.5,
+        "weight_value": 1.0,
+        "T": 750.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 3.119,
+        "H2": 43.84,
+        "CO2": 11.81,
+        "CH4": 2.092,
+        "objective": 2.759,
+        "term_weighted": {
+          "ratio": 0.245,
+          "h2": 0.369,
+          "ch4": 0.418,
+          "co2": 0.738,
+          "energy": 0.488,
+          "coke": 0.5
+        }
+      },
+      {
+        "multiplier": 1.0,
+        "weight_value": 2.0,
+        "T": 775.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.949,
+        "H2": 44.58,
+        "CO2": 11.09,
+        "CH4": 1.311,
+        "objective": 3.031,
+        "term_weighted": {
+          "ratio": 0.129,
+          "h2": 0.325,
+          "ch4": 0.524,
+          "co2": 0.693,
+          "energy": 0.609,
+          "coke": 0.75
+        }
+      },
+      {
+        "multiplier": 2.0,
+        "weight_value": 4.0,
+        "T": 800.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.819,
+        "H2": 45.28,
+        "CO2": 10.39,
+        "CH4": 0.793,
+        "objective": 3.364,
+        "term_weighted": {
+          "ratio": 0.065,
+          "h2": 0.283,
+          "ch4": 0.634,
+          "co2": 0.65,
+          "energy": 0.731,
+          "coke": 1.0
+        }
+      },
+      {
+        "multiplier": 4.0,
+        "weight_value": 8.0,
+        "T": 850.0,
+        "P": 5.0,
+        "SC": 3.0,
+        "H2_CO": 3.152,
+        "H2": 39.54,
+        "CO2": 9.69,
+        "CH4": 0.16,
+        "objective": 3.561,
+        "term_weighted": {
+          "ratio": 0.272,
+          "h2": 0.627,
+          "ch4": 0.255,
+          "co2": 0.605,
+          "energy": 1.05,
+          "coke": 0.75
+        }
+      }
+    ],
+    "co2": [
+      {
+        "multiplier": 0.0,
+        "weight_value": 0.0,
+        "T": 775.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.949,
+        "H2": 44.58,
+        "CO2": 11.09,
+        "CH4": 1.311,
+        "objective": 2.338,
+        "term_weighted": {
+          "ratio": 0.129,
+          "h2": 0.325,
+          "ch4": 0.524,
+          "co2": 0.0,
+          "energy": 0.609,
+          "coke": 0.75
+        }
+      },
+      {
+        "multiplier": 0.5,
+        "weight_value": 0.5,
+        "T": 775.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.949,
+        "H2": 44.58,
+        "CO2": 11.09,
+        "CH4": 1.311,
+        "objective": 2.684,
+        "term_weighted": {
+          "ratio": 0.129,
+          "h2": 0.325,
+          "ch4": 0.524,
+          "co2": 0.347,
+          "energy": 0.609,
+          "coke": 0.75
+        }
+      },
+      {
+        "multiplier": 1.0,
+        "weight_value": 1.0,
+        "T": 775.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.949,
+        "H2": 44.58,
+        "CO2": 11.09,
+        "CH4": 1.311,
+        "objective": 3.031,
+        "term_weighted": {
+          "ratio": 0.129,
+          "h2": 0.325,
+          "ch4": 0.524,
+          "co2": 0.693,
+          "energy": 0.609,
+          "coke": 0.75
+        }
+      },
+      {
+        "multiplier": 2.0,
+        "weight_value": 2.0,
+        "T": 800.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.819,
+        "H2": 45.28,
+        "CO2": 10.39,
+        "CH4": 0.793,
+        "objective": 3.696,
+        "term_weighted": {
+          "ratio": 0.065,
+          "h2": 0.283,
+          "ch4": 0.317,
+          "co2": 1.299,
+          "energy": 0.731,
+          "coke": 1.0
+        }
+      },
+      {
+        "multiplier": 4.0,
+        "weight_value": 4.0,
+        "T": 800.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.819,
+        "H2": 45.28,
+        "CO2": 10.39,
+        "CH4": 0.793,
+        "objective": 4.996,
+        "term_weighted": {
+          "ratio": 0.065,
+          "h2": 0.283,
+          "ch4": 0.317,
+          "co2": 2.599,
+          "energy": 0.731,
+          "coke": 1.0
+        }
+      }
+    ],
+    "energy": [
+      {
+        "multiplier": 0.0,
+        "weight_value": 0.0,
+        "T": 800.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.819,
+        "H2": 45.28,
+        "CO2": 10.39,
+        "CH4": 0.793,
+        "objective": 2.315,
+        "term_weighted": {
+          "ratio": 0.065,
+          "h2": 0.283,
+          "ch4": 0.317,
+          "co2": 0.65,
+          "energy": 0.0,
+          "coke": 1.0
+        }
+      },
+      {
+        "multiplier": 0.5,
+        "weight_value": 0.75,
+        "T": 800.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.819,
+        "H2": 45.28,
+        "CO2": 10.39,
+        "CH4": 0.793,
+        "objective": 2.681,
+        "term_weighted": {
+          "ratio": 0.065,
+          "h2": 0.283,
+          "ch4": 0.317,
+          "co2": 0.65,
+          "energy": 0.366,
+          "coke": 1.0
+        }
+      },
+      {
+        "multiplier": 1.0,
+        "weight_value": 1.5,
+        "T": 775.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.949,
+        "H2": 44.58,
+        "CO2": 11.09,
+        "CH4": 1.311,
+        "objective": 3.031,
+        "term_weighted": {
+          "ratio": 0.129,
+          "h2": 0.325,
+          "ch4": 0.524,
+          "co2": 0.693,
+          "energy": 0.609,
+          "coke": 0.75
+        }
+      },
+      {
+        "multiplier": 2.0,
+        "weight_value": 3.0,
+        "T": 775.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.949,
+        "H2": 44.58,
+        "CO2": 11.09,
+        "CH4": 1.311,
+        "objective": 3.64,
+        "term_weighted": {
+          "ratio": 0.129,
+          "h2": 0.325,
+          "ch4": 0.524,
+          "co2": 0.693,
+          "energy": 1.219,
+          "coke": 0.75
+        }
+      },
+      {
+        "multiplier": 4.0,
+        "weight_value": 6.0,
+        "T": 750.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 3.119,
+        "H2": 43.84,
+        "CO2": 11.81,
+        "CH4": 2.092,
+        "objective": 4.64,
+        "term_weighted": {
+          "ratio": 0.245,
+          "h2": 0.369,
+          "ch4": 0.837,
+          "co2": 0.738,
+          "energy": 1.95,
+          "coke": 0.5
+        }
+      }
+    ],
+    "coke": [
+      {
+        "multiplier": 0.0,
+        "weight_value": 0.0,
+        "T": 850.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.647,
+        "H2": 45.61,
+        "CO2": 9.47,
+        "CH4": 0.28,
+        "objective": 1.956,
+        "term_weighted": {
+          "ratio": 0.014,
+          "h2": 0.263,
+          "ch4": 0.112,
+          "co2": 0.592,
+          "energy": 0.975,
+          "coke": 0.0
+        }
+      },
+      {
+        "multiplier": 0.5,
+        "weight_value": 0.75,
+        "T": 800.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.819,
+        "H2": 45.28,
+        "CO2": 10.39,
+        "CH4": 0.793,
+        "objective": 2.547,
+        "term_weighted": {
+          "ratio": 0.065,
+          "h2": 0.283,
+          "ch4": 0.317,
+          "co2": 0.65,
+          "energy": 0.731,
+          "coke": 0.5
+        }
+      },
+      {
+        "multiplier": 1.0,
+        "weight_value": 1.5,
+        "T": 775.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 2.949,
+        "H2": 44.58,
+        "CO2": 11.09,
+        "CH4": 1.311,
+        "objective": 3.031,
+        "term_weighted": {
+          "ratio": 0.129,
+          "h2": 0.325,
+          "ch4": 0.524,
+          "co2": 0.693,
+          "energy": 0.609,
+          "coke": 0.75
+        }
+      },
+      {
+        "multiplier": 2.0,
+        "weight_value": 3.0,
+        "T": 750.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 3.119,
+        "H2": 43.84,
+        "CO2": 11.81,
+        "CH4": 2.092,
+        "objective": 3.677,
+        "term_weighted": {
+          "ratio": 0.245,
+          "h2": 0.369,
+          "ch4": 0.837,
+          "co2": 0.738,
+          "energy": 0.488,
+          "coke": 1.0
+        }
+      },
+      {
+        "multiplier": 4.0,
+        "weight_value": 6.0,
+        "T": 700.0,
+        "P": 5.0,
+        "SC": 2.0,
+        "H2_CO": 3.617,
+        "H2": 40.13,
+        "CO2": 13.64,
+        "CH4": 4.54,
+        "objective": 4.303,
+        "term_weighted": {
+          "ratio": 0.798,
+          "h2": 0.592,
+          "ch4": 1.816,
+          "co2": 0.852,
+          "energy": 0.244,
+          "coke": 0.0
+        }
+      }
+    ]
+  },
+  "named_regimes": {
+    "sadece_oran (tek-amacli)": {
+      "T": 850.0,
+      "P": 5.0,
+      "SC": 2.0,
+      "H2_CO": 2.647,
+      "H2": 45.61,
+      "CO2": 9.47,
+      "CH4": 0.28,
+      "objective": 0.027,
+      "term_weighted": {
+        "ratio": 0.027,
+        "h2": 0.0,
+        "ch4": 0.0,
+        "co2": 0.0,
+        "energy": 0.0,
+        "coke": 0.0
+      }
+    },
+    "dengeli (varsayilan)": {
+      "T": 775.0,
+      "P": 5.0,
+      "SC": 2.0,
+      "H2_CO": 2.949,
+      "H2": 44.58,
+      "CO2": 11.09,
+      "CH4": 1.311,
+      "objective": 3.031,
+      "term_weighted": {
+        "ratio": 0.129,
+        "h2": 0.325,
+        "ch4": 0.524,
+        "co2": 0.693,
+        "energy": 0.609,
+        "coke": 0.75
+      }
+    },
+    "verim-baskin": {
+      "T": 850.0,
+      "P": 5.0,
+      "SC": 2.0,
+      "H2_CO": 2.647,
+      "H2": 45.61,
+      "CO2": 9.47,
+      "CH4": 0.28,
+      "objective": 2.47,
+      "term_weighted": {
+        "ratio": 0.014,
+        "h2": 0.703,
+        "ch4": 0.337,
+        "co2": 0.592,
+        "energy": 0.325,
+        "coke": 0.5
+      }
+    },
+    "enerji-baskin": {
+      "T": 700.0,
+      "P": 5.0,
+      "SC": 2.0,
+      "H2_CO": 3.617,
+      "H2": 40.13,
+      "CO2": 13.64,
+      "CH4": 4.54,
+      "objective": 3.731,
+      "term_weighted": {
+        "ratio": 0.798,
+        "h2": 0.197,
+        "ch4": 0.908,
+        "co2": 0.852,
+        "energy": 0.975,
+        "coke": 0.0
+      }
+    },
+    "koklasma-baskin": {
+      "T": 700.0,
+      "P": 5.0,
+      "SC": 2.0,
+      "H2_CO": 3.617,
+      "H2": 40.13,
+      "CO2": 13.64,
+      "CH4": 4.54,
+      "objective": 4.105,
+      "term_weighted": {
+        "ratio": 0.798,
+        "h2": 0.395,
+        "ch4": 1.816,
+        "co2": 0.852,
+        "energy": 0.244,
+        "coke": 0.0
+      }
+    },
+    "cevre-baskin (CO2)": {
+      "T": 850.0,
+      "P": 5.0,
+      "SC": 3.0,
+      "H2_CO": 3.152,
+      "H2": 39.54,
+      "CO2": 9.69,
+      "CH4": 0.16,
+      "objective": 6.187,
+      "term_weighted": {
+        "ratio": 0.272,
+        "h2": 0.418,
+        "ch4": 0.064,
+        "co2": 3.632,
+        "energy": 1.05,
+        "coke": 0.75
+      }
+    }
+  }
+}

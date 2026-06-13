@@ -2,9 +2,9 @@
 
 Dear Editor,
 
-We are pleased to submit the manuscript entitled "Fuel-processing soft sensor for bio-oil steam reforming: data-curated inverse prediction from syngas" for consideration as a Research Article in Fuel Processing Technology.
+We are pleased to submit the manuscript entitled "Fuel-processing soft sensor for bio-oil steam reforming using Cantera-generated syngas data" for consideration as a Research Article in Fuel Processing Technology.
 
-The manuscript addresses a fuel-processing problem in bio-oil steam reforming: liquid bio-oil composition strongly affects downstream reforming behavior, but detailed liquid characterization is slower than reformer syngas measurement. We evaluate whether syngas composition and operating conditions can be used to infer class-level bio-oil composition through a data-curated inverse soft sensor.
+The manuscript addresses a fuel-processing problem in bio-oil steam reforming: liquid bio-oil composition strongly affects downstream reforming behavior, but detailed liquid characterization is slower than reformer syngas measurement. We evaluate whether syngas composition and operating conditions can be used to infer class-level bio-oil composition through an inverse ML soft sensor trained on Cantera-generated reforming data.
 
 The work combines a SQL audit of literature-derived bio-oil composition records, Cantera thermodynamic reformer simulations, and machine-learning model comparison. A multilayer perceptron achieved row-wise R2 = 0.863 and MAE = 4.03%, outperforming linear, tree-based, and ensemble alternatives. We also report a BiooilID holdout audit to clarify limits for unseen bio-oil identities.
 
@@ -19,4 +19,3 @@ Sincerely,
 [Affiliation]
 
 [Email]
-

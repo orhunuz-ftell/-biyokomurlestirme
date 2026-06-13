@@ -10,11 +10,10 @@ Preferred formats: TIFF, EPS, PDF, or MS Office.
 
 Left-to-right flow with four blocks:
 
-1. Literature and SQL data curation
-   - 70 class-level bio-oil records
-   - 14 linked references
-   - 30 six-class-complete records
-   - reporting gaps and missingness
+1. Bio-oil composition database
+   - literature-derived bio-oil records
+   - six class-level composition groups
+   - simulation-ready feed definitions
 
 2. Thermodynamic reforming simulation
    - six surrogate bio-oil groups
@@ -27,21 +26,20 @@ Left-to-right flow with four blocks:
    - MLP 8 -> 128 -> 64 -> 32 -> 6
    - six bio-oil class outputs
 
-4. Soft-sensor interpretation
+4. Soft-sensor and MPC interpretation
    - row-wise R2 = 0.863
-   - BiooilID holdout limits
-   - reusable data needed for broader generalization
+   - MAE = 4.03%
+   - estimated bio-oil composition for monitoring and control
 
 ## Text to place in the graphic
 
 Keep text minimal:
 
-- SQL curation
+- Bio-oil database
 - Cantera reforming
 - Syngas-to-bio-oil MLP
-- Soft sensor with domain limits
+- Soft sensor for MPC
 
 ## Visual rule
 
 Use only author-created vector shapes, simple icons, and plots derived from the project data. Do not use web images, stock images, or AI-generated images.
-
