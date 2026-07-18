@@ -1,0 +1,17 @@
+introduction 1000 kelimeyi geçmesin
+
+yayın: 10000 kelimeyi geçmesin
+
+ employet of different ml models
+
+
+
+
+
+
+1. introduction
+2. data preperation
+2.1 literature
+2.2 synthetic data 
+3. machine learning
+4. results
