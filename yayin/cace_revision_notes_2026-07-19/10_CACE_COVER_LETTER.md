@@ -7,7 +7,7 @@ Editor-in-Chief
 
 Dear Editor,
 
-We submit the manuscript entitled "A Cantera-assisted inverse deep-learning soft sensor for bio-oil steam reforming" for consideration as a full-length research article in *Computers & Chemical Engineering*.
+We submit the manuscript entitled "başlıl" for consideration as a full-length research article in *Computers & Chemical Engineering*.
 
 The work addresses a process-monitoring problem in bio-oil steam reforming: developing an inverse machine-learning soft sensor that estimates liquid-feed composition from reformer outlet syngas and operating conditions. Because paired plant measurements were unavailable, Cantera was used exclusively to generate a synthetic dataset for methodological development and model comparison. The resulting standard MLP achieved mean R² = 0.863 and MAE = 4.03 wt.% within the synthetic row-wise test setting. The manuscript does not propose using Cantera-generated data as a substitute for plant data; instead, it defines how the selected inverse-model architecture should be trained, validated, and recalibrated using measurements from the target facility.
 
